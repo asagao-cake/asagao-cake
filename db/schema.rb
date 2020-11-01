@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_083123) do
     t.integer "item_id"
     t.integer "price_including_tax"
     t.integer "item_count"
-    t.integer "production_status"
+    t.integer "production_status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,11 +84,11 @@ ActiveRecord::Schema.define(version: 2020_10_31_083123) do
     t.integer "customer_id"
     t.integer "billing_amount"
     t.integer "shipping_fee"
-    t.integer "payment_method"
+    t.integer "payment_method", default: 0
     t.string "postcode"
     t.string "address"
     t.string "name"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -100,18 +100,6 @@ ActiveRecord::Schema.define(version: 2020_10_31_083123) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
