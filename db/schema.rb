@@ -10,7 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_065246) do
+ActiveRecord::Schema.define(version: 2020_10_31_083123) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "item_id"
+    t.integer "item_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "phone_number"
+    t.string "postcode"
+    t.string "address"
+    t.boolean "is_quit", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -30,29 +70,12 @@ ActiveRecord::Schema.define(version: 2020_10_31_065246) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shipping_addresses", force: :cascade do |t|
-    t.integer "customer_id"
-    t.string "address"
-    t.string "postcode"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cart_items", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "item_id"
-    t.integer "item_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer "order_id"
     t.integer "item_id"
     t.integer "price_including_tax"
     t.integer "item_count"
-    t.integer "production_status"
+    t.integer "production_status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,37 +84,22 @@ ActiveRecord::Schema.define(version: 2020_10_31_065246) do
     t.integer "customer_id"
     t.integer "billing_amount"
     t.integer "shipping_fee"
-    t.integer "payment_method"
+    t.integer "payment_method", default: 0
     t.string "postcode"
     t.string "address"
     t.string "name"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "address"
+    t.string "postcode"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_customers_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
 end
