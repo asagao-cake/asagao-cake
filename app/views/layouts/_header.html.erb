@@ -6,16 +6,15 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
+          <li><%= link_to ' マイページ', customers_my_page_path %></li>
           <li><%= link_to ' 商品一覧', items_path %></li>
-          <li><%= link_to ' 会員一覧', users_path %></li>
-          <li><%= link_to ' 注文履歴一覧', books_path %></li>
-          <li><%= link_to ' ジャンル一覧', books_path %></li>
-          <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to ' カート', cart_item_path %></li>
+          <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to ' About', root_path %></li>
-          <li><%= link_to ' 商品一覧', about_path %></li>
-          <li><%= link_to ' 新規会員登録', new_user_registration_path %></li>
-          <li><%= link_to ' ログイン', new_user_session_path %></li>
+          <li><%= link_to ' About', homes_about_path %></li>
+          <li><%= link_to ' 商品一覧', items_path %></li>
+          <li><%= link_to ' 新規登録', new_customer_registration_path %></li>
+          <li><%= link_to ' ログイン', new_customer_session_path %></li>
         <% end %>
       </ul>
     </nav>
