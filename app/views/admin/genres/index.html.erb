@@ -1,10 +1,56 @@
 <div class= "container">
-    <div class="row">
-        <div class="col-lg-5">
 
-            <h3>ジャンル一覧・追加</>
-
+  <div class="row">
+      <div class="col-lg-5">
+        <h3>ジャンル一覧・追加</h3>
+        <div class="add_genre">
+        <!--ジャンル登録-->
+          <%= form_with model: @genre, url: admin_genres_path, local: true do |form| %>
+            <%= "ジャンル" %>
+            <%= form.text_field :name %>
+            <!--ラジオボタン-->
+            <%= form.radio_button :is_valid, :true, checked: true %>
+            <%= form.label :is_vaild, "有効", value: :true %>
+            <%= form.radio_button :is_valid, :false %>
+            <%= form.label :is_vaild, "無効", value: :false %>
+            <%= form.submit "追加", class: "btn btn-info" %>
+          <% end %>
         </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="genre_index">
+      <!--ジャンル一覧表-->
+      <table class='table table-hover table-inverse'>
+        <thead>
+          <tr class="active">
+            <th>ジャンル</th>
+            <th>状態</th>
+            <th><!--編集する--></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @genres.each do |genre| %>
+            <tr>
+              <td><%= genre.name %></td>
+              <td>
+                <% if genre.is_valid == true %>
+                  <p>有効</p>
+                <% else %>
+                  <p>無効</p>
+                <% end %>
+              </td>
+              <td class="edit-btn"><%= link_to '編集する', edit_admin_genre_path(genre.id), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      </div>
     </div>
+  </div>
 </div>
 
