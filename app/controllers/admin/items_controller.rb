@@ -11,13 +11,17 @@ class Admin::ItemsController < ApplicationController
       @item = Item.new
       render 'new'
     end
+  end
 
   def show
      @item = Item.find(params[:id])
      @genre = Genre.find(@item.genre_id)
   end
 
+  def index
+     @items = Item.all
   end
+
 
   private
   def item_params
