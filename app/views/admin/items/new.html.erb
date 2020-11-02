@@ -1,18 +1,42 @@
-<h1>商品新規登録</h1>
-<%= form_with model:@item, local:true do |f| %>
-  <%= f.label :商品名 %>
-  <%= f.text_field :name %>
+<div id = "title">
+  <h2>商品新規登録</h2>
+</div>
 
-  <%= f.label :商品説明 %>
-  <%= f.text_field :description %>
-
-  <%= f.label :ジャンル %>
-  <%= f.text_field :name %>
-
-  <%= f.label :税抜き価格 %>
-  <%= f.text_field :name %>
-
-  <%= f.label :販売ステータス %>
-  <%= f.text_field :name %>
-
-<% end %>
+<%= form_with model:@item, url: admin_items_path, method: :post,local:true do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <%= f.attachment_field :image %>
+    </div>
+    <div class="col-lg-8">
+      <table class="item-createtable">
+        <tr>
+          <td><%= f.label :商品名 %></td>
+          <td><%= f.text_field :name %></td>
+          </div>
+        </tr>
+        <tr>
+          <td><%= f.label :商品説明 %></td>
+          <td><%= f.text_field :description %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :ジャンル %></td>
+        <td><%= f.select :is_sale, [["クッキー", "100"],["和菓子", "101"]], include_blank: "選択してください" %></td>
+        <!--  <td><%= f.collection_select :genre_id, Genre.all, :name, :name, include_blank: "選択してください"  %></td><br>-->
+        </tr>
+        <tr>
+          <td><%= f.label :税抜き価格 %></td>
+          <td><%= f.text_field :price %></td><br>
+        </tr>
+        <tr>
+          <td><%= f.label :販売ステータス %>
+          <td><%= f.select :is_sale, [["販売中", "TRUE"],["販売停止中", "FALSE"]], include_blank: "選択してください" %></td><br>
+        </tr>
+      </table>
+    <div id = "create-btn">
+    <%= f.submit :新規登録, class: "btn btn-default btn-lg btn-info create-btn" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
