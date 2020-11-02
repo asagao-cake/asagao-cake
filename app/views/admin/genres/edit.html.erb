@@ -1,1 +1,21 @@
-<h1>ジャンル編集一覧</h1>
+<div class= "container">
+  <div class="row">
+      <div class="col-lg-5">
+
+        <h3>ジャンル編集</h3>
+        <div class="edit_genre">
+        <!--ジャンル編集-->
+          <%= form_with model: @genre, url: admin_genre_path, local: true do |form| %>
+            <%= "ジャンル" %>
+            <%= form.text_field :name %>
+            <%= form.radio_button :is_valid, :true %>
+            <%= form.label :is_vaild, "有効", value: :true %>
+            <%= form.radio_button :is_valid, :false %>
+            <%= form.label :is_vaild, "無効", value: :false %>
+            <%= form.submit "変更を保存する", class: "btn btn-info" %>
+          <% end %>
+        </div>
+
+      </div>
+  </div>
+</div>
