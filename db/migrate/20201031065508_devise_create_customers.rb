@@ -47,4 +47,5 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
     # add_index :customers, :confirmation_token,   unique: true
     # add_index :customers, :unlock_token,         unique: true
   end
+  
 end
