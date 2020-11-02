@@ -15,3 +15,27 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/*ヘッダー*/
+
+header {
+  background-color: #EDF4D6;
+  height: 100px;
+  width: 100%;
+}
+
+.logo {
+  padding-top: 5px;
+  font-size: 20px;
+  color: #656565;
+}
+
+.logo_image {
+  height: 90px;
+  border-radius: 40%;
+}
+
+.navbar-right {
+  font-size: 20px;
+  margin-top: 20px;
+}
