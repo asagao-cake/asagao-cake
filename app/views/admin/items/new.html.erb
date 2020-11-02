@@ -21,8 +21,7 @@
         </tr>
         <tr>
           <td><%= f.label :ジャンル %></td>
-        <td><%= f.select :is_sale, [["クッキー", "100"],["和菓子", "101"]], include_blank: "選択してください" %></td>
-        <!--  <td><%= f.collection_select :genre_id, Genre.all, :name, :name, include_blank: "選択してください"  %></td><br>-->
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :genre_id, include_blank: "選択してください"  %></td><br>
         </tr>
         <tr>
           <td><%= f.label :税抜き価格 %></td>
@@ -30,7 +29,7 @@
         </tr>
         <tr>
           <td><%= f.label :販売ステータス %>
-          <td><%= f.select :is_sale, [["販売中", "TRUE"],["販売停止中", "FALSE"]], include_blank: "選択してください" %></td><br>
+          <td><%= f.select :is_sale, [["販売中", "1"],["販売停止中", "0"]], include_blank: "選択してください" %></td><br>
         </tr>
       </table>
     <div id = "create-btn">
