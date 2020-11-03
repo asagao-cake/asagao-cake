@@ -1,3 +1,31 @@
 // Place all the styles related to the public::items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*顧客側商品一覧*/
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.row-lg-12 {
+    height: 500px;
+    width: 100%;
+}
+
+.genre-search {
+    height: 500px;
+}
+
+.item-image {
+    height: 500px;
+}
+
+.items {
+    height: 500px;
+    padding-left: 30px;
+}
+
+.price {
+    font-size: 30px;
+}

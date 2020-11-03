@@ -1,15 +1,16 @@
 <div id = "title">
-  <h2>商品新規登録</h2>
+  <h2>商品編集</h2>
 </div>
 
-<%= form_with model:@item, url: admin_items_path, method: :post,local:true do |f| %>
+<%= form_with model:@item, url: admin_item_path(@item.id), method: :patch,local:true do |f| %>
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
+      <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
       <%= f.attachment_field :image %>
     </div>
     <div class="col-lg-8">
-      <table class="item-createtable">
+      <table class="item-table">
         <tr>
           <td><%= f.label :商品名 %></td>
           <td><%= f.text_field :name %></td>
@@ -32,7 +33,7 @@
         </tr>
       </table>
     <div id = "item-action-btn">
-      <%= f.submit :新規登録, class: "btn btn-default btn-lg btn-info " %>
+      <%= f.submit :変更を保存, class: "btn btn-default btn-lg btn-info " %>
     </div>
     <% end %>
     </div>
