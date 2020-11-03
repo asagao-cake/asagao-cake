@@ -11,11 +11,16 @@ class Admin::ItemsController < ApplicationController
       @item = Item.new
       render 'new'
     end
+
+  def show
+     @item = Item.find(params[:id])
+     @genre = Genre.find(@item.genre_id)
+  end
+
   end
 
   private
   def item_params
-    #genre_idを一時的にpermitから外しています
     params.require(:item).permit(:image, :name, :genre_id, :description, :price, :is_sale )
   end
 end
