@@ -1,22 +1,22 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-default">
   <div class="container">
-    <nav class='nav navbar-nav navbar-left' >
-      <span>Bookers</span>
-    </nav>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <% if customer_signed_in? %>
-          <li><%= link_to ' マイページ', customers_my_page_path %></li>
-          <li><%= link_to ' 商品一覧', items_path %></li>
-          <li><%= link_to ' カート', cart_item_path %></li>
-          <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to ' About', homes_about_path %></li>
-          <li><%= link_to ' 商品一覧', items_path %></li>
-          <li><%= link_to ' 新規登録', new_customer_registration_path %></li>
-          <li><%= link_to ' ログイン', new_customer_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+      <nav class="nav navbar-nav navbar-left">
+        <div class="logo"><%= image_tag 'logo.jpg', class: "logo_image", fallback: "ロゴ画像" %>　長野県にある小さな洋菓子店</div>
+      </nav>
+      <nav class=>
+        <ul class="nav navbar-nav navbar-right">
+          <% if customer_signed_in? %>
+            <li><%= link_to " マイページ ", customers_my_page_path %></li>
+            <li><%= link_to " 商品一覧 ", items_path %></li>
+            <li><%= link_to " カート ", cart_item_path %></li>
+            <li><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to " About ", homes_about_path %></li>
+            <li><%= link_to " 商品一覧 ", items_path %></li>
+            <li><%= link_to " 新規登録 ", new_customer_registration_path %></li>
+            <li><%= link_to " ログイン ", new_customer_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
   </div>
 </header>
