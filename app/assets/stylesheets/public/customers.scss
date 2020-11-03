@@ -2,7 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.table-noborder{
-  border-top: 0px !important;
-  border-bottom: 0px !important;
+.signup-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 20%;
+}
+.login-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 28%;
+}
+.signup{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 13%;
+}
+.title-area{
+  margin-left: 220px;
 }
