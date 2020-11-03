@@ -1,1 +1,42 @@
-商品詳細
+<div id = "title">
+  <h2>商品詳細</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
+    </div>
+    <div class="col-lg-8">
+      <table class="item-createtable">
+        <tr>
+          <td>商品名</td>
+          <td><%= @item.name %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>商品説明</td>
+          <td><%= @item.description %></td>
+        </tr>
+        <tr>
+          <td>ジャンル</td>
+          <td><%= @genre.name %></td>
+        </tr>
+        <tr>
+          <td>税込価格（税抜価格）</td>
+          <td><%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited)  %>（<%= @item.price.to_s(:delimited) %>）円</td>
+        </tr>
+        <tr>
+          <td>販売ステータス</td>
+          <td>
+            <% if @item.is_sale == true %>
+              販売中
+            <% else %>
+              販売停止
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2020_11_02_052757) do
   end
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "item_id"
-    t.integer "item_count"
+    t.integer "customer_id", null: false
+    t.integer "item_id", null: false
+    t.integer "item_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 2020_11_02_052757) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "phone_number"
-    t.string "postcode"
-    t.string "address"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "phone_number", null: false
+    t.string "postcode", null: false
+    t.string "address", null: false
     t.boolean "is_quit", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,51 +53,51 @@ ActiveRecord::Schema.define(version: 2020_11_02_052757) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.boolean "is_valid", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "genre_id"
-    t.string "name"
-    t.text "description"
-    t.integer "price"
-    t.string "image_id"
+    t.integer "genre_id", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
+    t.integer "image_id", null: false
     t.boolean "is_sale", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "item_id"
-    t.integer "price_including_tax"
-    t.integer "item_count"
-    t.integer "production_status", default: 0
+    t.integer "order_id", null: false
+    t.integer "item_id", null: false
+    t.integer "price_including_tax", null: false
+    t.integer "item_count", null: false
+    t.integer "production_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "billing_amount"
-    t.integer "shipping_fee"
-    t.integer "payment_method", default: 0
-    t.string "postcode"
-    t.string "address"
-    t.string "name"
-    t.integer "status", default: 0
+    t.integer "customer_id", null: false
+    t.integer "billing_amount", null: false
+    t.integer "shipping_fee", null: false
+    t.integer "payment_method", default: 0, null: false
+    t.string "postcode", null: false
+    t.string "address", null: false
+    t.string "name", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "shipping_addresses", force: :cascade do |t|
-    t.integer "customer_id"
-    t.string "address"
-    t.string "postcode"
-    t.string "name"
+    t.integer "customer_id", null: false
+    t.string "address", null: false
+    t.string "postcode", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
