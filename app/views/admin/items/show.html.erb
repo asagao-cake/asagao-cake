@@ -8,7 +8,7 @@
       <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
     </div>
     <div class="col-lg-8">
-      <table class="item-createtable">
+      <table class="item-table">
         <tr>
           <td>商品名</td>
           <td><%= @item.name %></td>
@@ -37,6 +37,9 @@
           </td>
         </tr>
       </table>
+      <div id = "item-action-btn">
+        <%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-default btn-lg btn-info " %>
+      </div>
     </div>
   </div>
 </div>
