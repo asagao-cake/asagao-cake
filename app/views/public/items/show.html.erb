@@ -13,7 +13,8 @@
       <h1><%= @item.name %></h1>
       <p><%= @item.description %></p>
       <p><span class="price">￥<%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited) %></span>　(税込)</p>
-      <%= form_with model:@item, url: cart_items_path, method: :post,local:true do |f| %>
+      <!--@itemを＠cart_itemに変更-->
+      <%= form_with model:@cart_item, url: cart_items_path, method: :post,local:true do |f| %>
         <span>個数選択　<%= f.number_field :item_count %>　</span>
         <%= f.submit :カートに入れる, class: "btn btn-default btn-md btn-primary create-btn" %>
       <% end %>
