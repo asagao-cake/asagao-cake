@@ -7,6 +7,10 @@ class Customer < ApplicationRecord
   has_many :cart_items
   has_many :orders
   has_many :shipping_addresses
-  
-  
+
+  def active_for_authentication?
+    super && (self.is_quit == false)
+  end
+
+
 end
