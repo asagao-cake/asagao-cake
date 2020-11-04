@@ -5,7 +5,7 @@
     <%= link_to item_path(item) do %>
       <span class="item-image"><%= attachment_image_tag item, :image, :fill, 250, 150, format: 'jpeg', alt: '商品画像' %></span>
     <% end %>
-    <p><%= link_to item.name, item_path(item) %></p>
-    <p>￥<%= item.price %></p>
+    <p class="name"><%= link_to item.name, item_path(item) %></p>
+    <p class="price">￥<%= item.price.to_s(:delimited) %></p>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row-xs-12 row-box">
 
     <!--ジャンル検索・サイドバー-->
     <div class="genre-search col-xs-3">
@@ -19,6 +19,7 @@
         <%= render 'public/items/item_index', items: @items %>
       </div>
 
+      <!--ページネーション-->
       <divclass="pagenation"><%= paginate @pages %></div>
     </div>
 
