@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+        <div class="col-xs-4">
+          <h4><strong>登録情報</strong></h4>
+        </div>
+        <div class="col-xs-3">
+          <%= link_to '編集する', edit_customers_path, class:"btn btn-primary" %>
+        </div>
+        <div class="col-xs-3">
+          <%= link_to 'パスワードを変更する', edit_customer_password_path, class:"btn btn-primary" %>
+        </div>
+        <br></br><br>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="col-md-3 info">氏名</td>
+            <td><%= @customer.last_name %> <%= @customer.first_name %></td>
+          </tr>
+          <tr>
+            <td class="info">カナ</td>
+            <td><%= @customer.last_name_kana %> <%= @customer.first_name_kana %></td>
+          </tr>
+          <tr>
+            <td class="info">郵便番号</td>
+            <td><%= @customer.postcode %></td>
+          </tr>
+          <tr>
+            <td class="info">住所</td>
+            <td><%= @customer.address %></td>
+          </tr>
+          <tr>
+            <td class="info">電話番号</td>
+            <td><%= @customer.phone_number %></td>
+          </tr>
+          <tr>
+            <td class="info">メールアドレス</td>
+            <td><%= @customer.email %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="action_field row">
+        <div class="col-xs-4">
+          <h4>配送先</h4>
+        </div>
+        <div class="col-xs-3">
+          <%=link_to '一覧を見る', shipping_addresses_path(@customer), class:"btn btn-primary" %>
+        </div>
+      </div>
+      <div class="action_field row">
+        <div class="col-xs-4">
+          <h4>注文履歴</h4>
+        </div>
+        <div class="col-xs-3">
+          <%=link_to '一覧を見る', orders_path(@customer), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
