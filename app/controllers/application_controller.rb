@@ -2,12 +2,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 def current_cart
-    if session[:customer_id]
-      @cart_item = CartItem.find(session[:customer_id])
-    else
-      @cart_item = CartItem.create
-      session[:customer_id] = @customer.id
-    end
+  @cart_items = CartItem.where(customer_id: "current_customer_id")
+rescue ActiveRecord::RecordNotFound
+  @cart_items = CartItem.create
 end
 
   private
