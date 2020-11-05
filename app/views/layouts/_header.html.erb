@@ -1,22 +1,34 @@
 <header class="navbar navbar-default">
-  <div class="container">
-      <nav class="nav navbar-nav navbar-left">
-        <div class="logo"><%= image_tag 'logo.jpg', class: "logo_image", fallback: "ロゴ画像" %>　長野県にある小さな洋菓子店</div>
+  <div class="container-fluid">
+
+      <!--ロゴ-->
+      <nav class="nav navbar-header navbar-left">
+        <div class="logo"><%= image_tag 'logo.jpg', class: "logo_image", fallback: "ロゴ画像" %><span class="header-text">　長野県にある小さな洋菓子店</span></div>
       </nav>
-      <nav class=>
+
+      <!--メニューボタン-->
+      <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if customer_signed_in? %>
-            <li><%= link_to " マイページ ", customers_my_page_path %></li>
-            <li><%= link_to " 商品一覧 ", items_path %></li>
-            <li><%= link_to " カート ", cart_items_path %></li>
-            <li><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete %></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " マイページ ", customers_my_page_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " 商品一覧 ", items_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " カート ", cart_items_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete %></button></li>
           <% else %>
-            <li><%= link_to " About ", homes_about_path %></li>
-            <li><%= link_to " 商品一覧 ", items_path %></li>
-            <li><%= link_to " 新規登録 ", new_customer_registration_path %></li>
-            <li><%= link_to " ログイン ", new_customer_session_path %></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " About ", homes_about_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " 商品一覧 ", items_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " 新規登録 ", new_customer_registration_path %></button></li>
+            <li class="button"><button type="button" class="btn btn-default btn-lg"><%= link_to " ログイン ", new_customer_session_path %></button></li>
           <% end %>
         </ul>
       </nav>
+
   </div>
 </header>
+
+<div class="search-form">
+  <%= form_tag(items_path,:method => 'get') do %>
+    <%= text_field_tag :name %>
+    <%= submit_tag '検索' %>
+  <% end %>
+</div>
