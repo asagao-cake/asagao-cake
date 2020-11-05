@@ -16,18 +16,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*ヘッダー*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-header {
-  background-color: #EDF4D6;
-  height: 100px;
-  width: 100%;
+/*ヘッダー*/
+.navbar-default {
+  height: 130px;
+  background-color: #E2D8C9;
+  border-color: #E2D8C9;
+}
+
+.header-text {
+  font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
 .logo {
-  padding-top: 5px;
   font-size: 20px;
   color: #656565;
+  position: absolute;
+  top: 20px;
+  left: 70px;
 }
 
 .logo_image {
@@ -40,3 +51,27 @@ header {
   margin-top: 20px;
 }
 
+<<<<<<< HEAD
+=======
+.button {
+  padding-right: 30px;
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
+
+// footer {
+//   height: 100px;
+//   background-color: #E2D8C9;
+//   border-color: #E2D8C9;
+//   font-size: 20px;
+//   text-align: center;
+//   line-height: 100px;
+//   font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+// }
+
+.search-form{
+  padding-right: 130px;
+  text-align: right;
+}
+>>>>>>> origin/develop
