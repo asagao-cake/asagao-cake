@@ -1,1 +1,34 @@
-git pull origin develop
+<div class="container-fluid">
+  <div class="row">
+    <!--ジャンル検索・サイドバー-->
+    <div class="genre-search col-xs-3">
+      <%= render 'public/items/genre_search', genres: @genres %>
+    </div>
+
+    <div class="main-visual">
+        <div class="main-visual-content">
+            <p class="main-visual-text">
+                ようこそ、NaganoCakeへ！<br>
+                このサイトは、ケーキ販売のECサイトになります。<br>
+                会員でない方も商品の閲覧はできますが、<br>
+                購入には会員登録が必要になります。<br>
+            </p>
+        </div>
+    </div>
+
+    <h2>オススメ商品</h2>
+    <!--オススメ商品一覧・表示-->
+    <div class="item-box">
+      <% @recommended_items.each do |item| %>
+        <div class="item-index">
+          <%= link_to item_path(item) do %>
+            <span class="item-image"><%= attachment_image_tag item, :image, :fill, 250, 150, format: 'jpeg', alt: '商品画像' %></span>
+          <% end %>
+          <p><%= link_to item.name, item_path(item) %></p>
+          <p>￥<%= item.price %></p>
+        </div>
+      <% end %>
+      <p id="item-index-link"><%= link_to " もっと見る> ", items_path %></p>
+    </div>
+  </div>
+</div>
