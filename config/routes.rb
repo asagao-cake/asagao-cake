@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/' => 'public/homes#top', as: "root"
-  devise_for :customers
+  devise_for :customers, path: 'customer'
   scope module: :public do
     get '/homes/about' => 'homes#about'
     resource :customers, only: [:edit, :update]
