@@ -1,23 +1,21 @@
-<div class="container">
-  <div class="row-lg-12">
+<div class="container-fluid">
+  <div class="row-xs-12 row-box">
     <!--ジャンル検索-->
-    <div class="col-lg-3 genre-search">
-      <h1>ジャンル検索機能が入る</h1>
+    <div class="col-xs-3 genre-search">
+      <%= render 'public/items/genre_search', genres: @genres %>
     </div>
     <!--商品画像-->
-    <div class="col-lg-4 item-image">
-      <%= attachment_image_tag @item, :image, :fill, 350, 250, format: 'jpeg', alt: '商品画像' %>
+    <div class="col-xs-4 item-image">
+      <span class="image"><%= attachment_image_tag @item, :image, :fill, 350, 250, format: 'jpeg', alt: '商品画像', class: "img-responsive" %></span>
     </div>
     <!--商品説明-->
-    <div class="col-lg-5 items">
-      <h1><%= @item.name %></h1>
-      <p><%= @item.description %></p>
-      <p><span class="price">￥<%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited) %></span>　(税込)</p>
-      <!--@itemを＠cart_itemに変更-->
-      <%= form_with model:@cart_item, url: cart_items_path, method: :post, local:true do |f| %>
-        <span>個数選択　<%= f.number_field :item_count %>　</span>
-        <%= hidden_field_tag :customer_id, current_customer.id %>
-        <%= hidden_field_tag :item_id, @item.id %>
+    <div class="col-xs-5 items">
+      <h1 class="item-name"><%= @item.name %></h1>
+      <p class="item-description"><%= @item.description %></p>
+      <p><span class="item-price">￥<%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited) %></span>　(税込)</p>
+      <div class="buttons"></div>
+      <%= form_with model:@item, url: cart_items_path, method: :post,local:true do |f| %>
+        <span class="col-xs-4"><%= f.select :item_count, options_for_select((1..10).to_a), {include_blank: '個数選択'}, class: 'form-control' %></span>
         <%= f.submit :カートに入れる, class: "btn btn-default btn-md btn-primary create-btn" %>
       <% end %>
     </div>

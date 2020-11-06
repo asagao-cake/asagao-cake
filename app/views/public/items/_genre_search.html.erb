@@ -1,0 +1,16 @@
+<!--ジャンル検索の部分テンプレート-->
+
+<table class="panel panel-success table table-borderd">
+  <thead>
+    <tr>
+      <th class="panel-heading success"><h4 class="genre-title">ジャンル検索</h4></th>
+    </tr>
+  </thead>
+  <tbody class="panel-body">
+    <% genres.each do |genre| %>
+      <tr>
+        <td><h5 class="genre-name">　　<%= link_to genre.name, items_path(name: genre.name) %></h5></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

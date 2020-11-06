@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/' => 'public/homes#top', as: "root"
-  devise_for :customers
+  devise_for :customers, path: 'customer'
   scope module: :public do
     get '/homes/about' => 'homes#about'
     resource :customers, only: [:edit, :update]
@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     get '/cart_items' => 'cart_items#cart'
     
     resources :orders, only: [:new, :create, :show, :index]
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
     post '/orders/confirm' => 'orders#confirm'
-    get '/orders/complete' => 'orders#order_comlete'
+    get '/orders/complete' => 'orders#order_complete'
+    resources :orders, only: [:new, :create, :show, :index]
     resources :items, only: [:index, :show]
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
   end
