@@ -14,8 +14,10 @@
       <p class="item-description"><%= @item.description %></p>
       <p><span class="item-price">￥<%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited) %></span>　(税込)</p>
       <div class="buttons"></div>
-      <%= form_with model:@item, url: cart_items_path, method: :post,local:true do |f| %>
+      <%= form_with model:@cart_item, url: cart_items_path, method: :post, local:true do |f| %>
         <span class="col-xs-4"><%= f.select :item_count, options_for_select((1..10).to_a), {include_blank: '個数選択'}, class: 'form-control' %></span>
+        <%= hidden_field_tag :customer_id, current_customer.id %>
+        <%= hidden_field_tag :item_id, @item.id %>
         <%= f.submit :カートに入れる, class: "btn btn-default btn-md btn-primary create-btn" %>
       <% end %>
     </div>
