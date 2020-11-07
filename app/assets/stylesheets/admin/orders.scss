@@ -1,3 +1,36 @@
 // Place all the styles related to the admin::orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*共通*/
+.title-area {
+  margin-top: 50px;
+}
+
+.order-info-title{
+  background-color: #D8D8D8;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+/*注文履歴一覧*/
+.order-info-table{
+  height: 300px;
+  padding: 50px 100px 30px 100px;
+  font-size: 16px;
+}
+
+/*注文履歴詳細*/
+.order-info-show {
+  height: 300px;
+  padding: 50px 100px 30px 100px;
+  font-size: 16px;
+}

@@ -1,2 +1,12 @@
 class Admin::OrdersController < ApplicationController
+
+    def index #注文履歴一覧
+    end
+
+    def show #注文履歴詳細
+    end
+
+    def update #注文ステータス・制作ステータス
+    end
+
 end
