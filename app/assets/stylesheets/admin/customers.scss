@@ -1,3 +1,29 @@
 // Place all the styles related to the admin::customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#title{
+  margin-left :100px;
+  margin-bottom :100px;
+}
+
+.customer-indextable{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+}
+
+.customer-indextable th{
+  background-color: #C0C0C0
+}
+.customer-indextable td{
+  border-bottom:solid 1px #808080;
+}
+
+.customertable{
+  border-collapse: separate;
+  border-spacing: 10px 20px;
+}
+
+// customer

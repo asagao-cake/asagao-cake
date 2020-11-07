@@ -16,7 +16,7 @@
               有効会員
             <% end %>
           </td>
-          </div>
+        </div>
         </tr>
         <tr>
           <td>氏名</td>
@@ -46,12 +46,15 @@
           <td><%= @customer.phone_number %></td>
         </tr>
       </table>
-      <div id = "customer-action-btn">
-        <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-default btn-info " %>
+      <div class="col-md-2">
+        <div id = "customer-action-btn">
+          <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-default btn-info " %>
+        </div>
       </div>
-      <div id = "orders-action-btn">
-        <%= link_to "注文履歴一覧を見る", admin_orders_path, class: "btn btn-default btn-info " %>
+      <div class="col-md-2">
+        <div id = "orders-action-btn">
+          <%= link_to "注文履歴一覧を見る", admin_orders_path, class: "btn btn-default btn-info " %>
+        </div>
       </div>
-    </div>
   </div>
 </div>
