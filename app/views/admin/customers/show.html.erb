@@ -5,17 +5,19 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <table class="customer-table">
+      <table class="customer-table ">
         <tr>
           <td>顧客ID</td>
           <td><%= @customer.id %></td>
+
           <td>
             <% if @customer.is_quit == true %>
-              退会済
+              <span class="label label-danger">退会済</span>
             <% else %>
-              有効会員
+              <span class="label label-primary">有効会員</span>
             <% end %>
           </td>
+
         </div>
         </tr>
         <tr>
