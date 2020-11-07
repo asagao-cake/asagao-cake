@@ -9,4 +9,8 @@ class Admin::OrdersController < ApplicationController
     def update #注文ステータス・制作ステータス
     end
 
+    def new
+      @order = Order.new
+    end
+
 end
