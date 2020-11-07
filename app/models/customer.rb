@@ -12,5 +12,9 @@ class Customer < ApplicationRecord
     super && (self.is_quit == false)
   end
 
+  def now_address
+     self.postcode + self.address + self.last_name + self.first_name
+  end
+
 
 end
