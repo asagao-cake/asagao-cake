@@ -36,6 +36,10 @@ class Public::OrdersController < ApplicationController
     def create #注文情報登録
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
+        @order.name = params[:order][:name]
+        @order.postcode = params[:order][:postcode]
+        @order.address = params[:order][:address]
+        @order.payment_method = params[:order][:payment_method]
         @order.save
           current_customer.cart_items.each do |cart_item|
             @order_item = @order.order_items.new
