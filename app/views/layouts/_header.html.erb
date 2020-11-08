@@ -3,7 +3,12 @@
 
       <!--ロゴ-->
       <nav class="nav navbar-header navbar-left">
-        <div class="logo"><%= image_tag 'logo.jpg', class: "logo_image", fallback: "ロゴ画像" %><span class="header-text">　長野県にある小さな洋菓子店</span></div>
+        <div class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag 'logo.jpg', class: "logo_image", fallback: "ロゴ画像" %>
+          <% end %>
+          <span class="header-text">　長野県にある小さな洋菓子店</span>
+        </div>
       </nav>
 
       <!--メニューボタン-->
