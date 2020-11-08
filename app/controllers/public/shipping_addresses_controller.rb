@@ -12,7 +12,9 @@ class Public::ShippingAddressesController < ApplicationController
     if @address.save
       redirect_to shipping_addresses_path
     else
-      render :shipping_addresses_path
+      @customer = Customer.find(current_customer.id)
+      @addresses = @customer.shipping_addresses
+      render 'index'
     end
   end
 
@@ -25,7 +27,7 @@ class Public::ShippingAddressesController < ApplicationController
     if @address.update(address_params)
       redirect_to shipping_addresses_path
     else
-      render :edit_shipping_address_path
+      render 'edit'
     end
   end
 

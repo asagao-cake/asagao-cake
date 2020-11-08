@@ -1,9 +1,14 @@
 ja:
+  devise:
+    sessions:
+        signed_in: ''
+        signed_out: ''
   activerecord:
     models:
       customer: 顧客
       item: 商品
       genre: ジャンル
+      shipping_address: 配送先
     attributes:
       customer:
         last_name: 名前（姓）
@@ -26,3 +31,8 @@ ja:
         is_sale: 販売ステータス
       genre:
         name: ジャンル名
+      shipping_address:
+        postcode: 郵便番号
+        address: 住所
+        name: 宛名
+
