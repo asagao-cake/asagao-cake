@@ -1,6 +1,6 @@
 <div class="title-area">
   <h3><span class="order-info-title">　注文履歴一覧　</span></h3>
-</div>
+</div>is
 
 <div class="container-fluid">
   <div class="row-sm-12 order-info-table">
@@ -18,20 +18,20 @@
         </thead>
 
         <tbody>
-          <% "@orders.each do |order|が入ります" %>
+          <% @orders.each do |order| %>
             <tr>
-              <td><%= "order.created_at" %></td>
-              <td><%= "order.name" %></td>
-              <td><%= "order.item_count" %></td>
-              <td><%= "order.status" %></td>
+              <td><%= order.created_at %></td>
+              <td><%= order.name %></td>
+              <td><%= order.item_count %></td>
+              <td><%= order.status %></td>
             </tr>
-          <% "endがはいります" %>
+          <% end %>
         </tbody>
       </table>
     </div>
-    
+
     <!--ページネーション-->
-    <divclass="pagenation"><%= "paginate @pages" %></div>
+    <divclass="pagenation"><%= paginate @pages %></div>
 
   </div>
 </div>
