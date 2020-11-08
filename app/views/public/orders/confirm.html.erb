@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row-xs-12 order-info-table">
 
-    <div class="col-xs-9">
+    <div class="col-xs-9 item-info-table">
     <!--商品情報テーブル-->
       <table class="table table-bordered">
       	<thead>
@@ -18,14 +18,38 @@
       	</thead>
 
       	<tbody>
+      	  <% @cart_items.each do |cart_item| %>
       		<tr>
-      			<td></td>
-      			<td></td>
-      			<td></td>
-      			<td></td>
+      			<td>
+      			  <%= attachment_image_tag cart_item.item, :image, :fill, 50, 50, format: 'jpeg', alt: "商品画像" %>
+				      <%= cart_item.item.name %>
+      			</td>
+      			<td><%= ((cart_item.item.price * 1.1).round(2)).ceil.to_s(:delimited) %></td>
+      			<td><%= cart_item.item_count %></td>
+      			<td><%= ((((cart_item.item.price * 1.1).round(2)).ceil) * (cart_item.item_count)).to_s(:delimited) %></td>
       		</tr>
+      		<% end %>
       	</tbody>
       </table>
+
+      <!--支払方法・届先・購入ボタン-->
+      <h4>支払方法</h4>
+      <p><%= @order.payment_method %></p>
+      <h4>お届け先</h4>
+
+      <p>
+        <%= @order.postcode %>
+        <%= @order.address %>
+        <%= @order.name %>
+      </p>
+
+      <%= form_for @order, url: orders_path do |f| %>
+        <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+        <%= f.hidden_field :postcode, :value => @order.postcode %>
+        <%= f.hidden_field :address, :value => @order.address %>
+        <%= f.hidden_field :name, :value => @order.name %>
+        <%= f.submit "購入を確定する", class: "submit-button btn btn-success btn-lg" %>
+      <% end %>
     </div>
 
     <div class="col-sm-3">
@@ -33,24 +57,17 @@
       <table class="table table-bordered">
         <tr>
           <th class="success">送料</th>
-          <td></td>
+          <td><%= @shipping_fee %></td>
         </tr>
         <tr>
           <th class="success">商品合計</th>
-          <td></td>
+          <td><%= @total_price.to_s(:delimited) %></td>
         </tr>
         <tr>
           <th class="success">請求金額</th>
-          <td></td>
+          <td><%= @billing_amount.to_s(:delimited) %></td>
         </tr>
       </table>
-    </div>
-
-    <div class="col-sm-12">
-    <!--支払方法・届先・購入ボタン-->
-      <p class="order-info-text">支払方法　支払い方法が入る！</p>
-      <p class="order-info-text">お届け先　住所が入る！</p>
-      <div class="submit-button btn btn-success btn-lg">　購入を確定する　</div>
     </div>
 
   </div>
