@@ -12,7 +12,10 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
-    # @cart_item = CartItem.new(cart_item_params)
+    # if params[:item_count].blank?
+    #   @item = Item.find(params[:item_id])
+    #   @genres = Genre.all
+    #   render "public/items/show"
     if CartItem.where(item_id: params[:item_id]).where(customer_id: current_customer.id).exists?
       @cart_item = CartItem.find_by(item_id: params[:item_id],customer_id: current_customer.id)
       @cart_item.item_count += params[:item_count].to_i
@@ -22,10 +25,6 @@ class Public::CartItemsController < ApplicationController
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.save
       redirect_to action: :cart
-    # else
-        # @item = Item.find(params[:id])
-        # @genres = Genre.all
-        # render 'public/items/show'
     end
   end
 

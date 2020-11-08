@@ -76,3 +76,21 @@
 .container-fluid{
   height: 130px;
 }
+
+.alert{
+    color:#262626;
+    background:#FFEBE8;
+    text-align: left;
+    border:2px solid #990000;
+    padding:12px; font-weight:850;
+    width: 500px;
+  }
+
+.alert ul {
+  list-style: none;
+}
+
+.alert-position{
+  margin: auto;
+  margin-top: 20px;
+}
