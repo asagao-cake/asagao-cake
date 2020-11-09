@@ -8,17 +8,14 @@ class Admin::OrdersController < ApplicationController
     def show #注文履歴詳細
         @order = Order.find(params[:id])
         @order_items = OrderItem.where(order_id: params[:id])
+        @total_fee = (@order.billing_amount - @order.shipping_fee).to_s(:delimited)
     end
 
-    def update #注文ステータス・制作ステータス
-        # 注文ステータス
-        @order_status = Order.find(params[:id])
-        @order_status.update(order_params)
-        redirect_to admin_order_path(@order_status)
-        # 制作ステータス
-        @production_status = OrderItem.find(params[:id])
-        @order_status.update(order_params)
-        redirect_to admin_order_path(@order_status)
+    def update #注文ステータス
+             # 注文ステータス
+            @order_status = Order.find(params[:id])
+            @order_status.update(order_params)
+            redirect_to admin_order_path(params[:id])
     end
 
     def new

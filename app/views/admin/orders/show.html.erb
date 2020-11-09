@@ -1,5 +1,5 @@
 <div class="title-area">
-  <h3><span class="order-info-title">　管理者注文履歴詳細　</span></h3>
+  <h3><span class="order-info-title">　注文履歴詳細　</span></h3>
 </div>
 
 <div class="container-fluid">
@@ -13,7 +13,8 @@
         </tr>
         <tr>
           <th>配送先</th>
-          <td><%= @order.address %></td>
+          <td><%= @order.postcode %>
+              <%= @order.address %></td>
         </tr>
         <tr>
           <th>支払方法</th>
@@ -21,9 +22,9 @@
         </tr>
         <tr>
           <th>注文ステータス</th>
-          <%= form_with model:@order_status, url: admin_order_path, method: :patch,local:true do |f| %>
+          <%= form_with model:@order, url: admin_order_path, method: :patch,local:true do |f| %>
             <td>
-              <%= f.select :is_sale, [["入金待ち", "0"],["入金確認", "1"],["制作中", "2"],["発送準備中", "3"],["発送済み", "4"]], include_blank: "選択してください" %>
+              <%= f.select :status, Order.statuses.keys %>
               <%= f.submit :更新, class: "btn btn-md btn-primary" %>
             </td>
           <% end %>
@@ -50,16 +51,19 @@
 
         <tbody>
             <tr>
-            <% @order_items.each do |order| %>
-              <td><%= order.item.name %></td>
-              <td><%= order.price_including_tax %></td>
-              <td><%= order.item_count %></td>
-            <% end %>
-              <td><%= "小計が入ります！" %></td>
-              <%= form_with model:@production_status, url: admin_order_detail_path, method: :patch,local:true do |f| %>
-                <td><%= f.select :@production_status, [["着手不可", "0"],["製作待ち", "1"],["製作中", "2"],["製作完了", "3"]], include_blank: "選択してください" %></td>
+            <% @order_items.each do |order_item| %>
+              <td><%= order_item.item.name %></td>
+              <td><%= order_item.price_including_tax %></td>
+              <td><%= order_item.item_count %></td>
+              <td><%= (order_item.price_including_tax * order_item.item_count).to_s(:delimited) %></td>
+
+              <!--制作ステータス-->
+              <%= form_with model: order_item, url: admin_order_detail_path(order_item.id), method: :patch,local:true do |f| %>
+
+                <td><%= f.select :production_status, ["着手不可","製作待ち","製作中","製作完了"], include_blank: "選択してください" %></td>
                 <td><%= f.submit :更新, class: "btn btn-md btn-primary" %></td>
               <% end %>
+            <% end %>
             </tr>
         </tbody>
       </table>
@@ -70,15 +74,15 @@
       <table class="table table-noborder">
         <tr>
           <th class="success">商品合計</th>
-          <td><%= %>円</td>
+          <td><%= @total_fee %></td>
         </tr>
         <tr>
           <th class="success">送料</th>
-          <td><%= %>円</td>
+          <td><%= @order.shipping_fee %></td>
         </tr>
         <tr>
           <th class="success">請求金額合計</th>
-          <td><%= %>円</td>
+          <td><%= @order.billing_amount.to_s(:delimited) %></td>
         </tr>
       </table>
     </div>
