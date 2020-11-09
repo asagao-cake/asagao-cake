@@ -23,7 +23,7 @@
           <th>注文ステータス</th>
           <%= form_with model:@order_status, url: admin_order_path, method: :patch,local:true do |f| %>
             <td>
-              <%= f.select :is_sale, [["入金待ち", "0"],["入金確認", "1"],["制作中", "2"],["発送準備中", "3"],["発送済み", "4"]], include_blank: "選択してください" %>
+              <%= f.select :status, Order.statuses.keys, :selected=>Order.statuses[@order.status] %>
               <%= f.submit :更新, class: "btn btn-md btn-primary" %>
             </td>
           <% end %>
@@ -32,38 +32,7 @@
       </table>
   </div>
 
-  <div class="row-sm-12 order-info-show">
 
-    <div class="col-sm-9 order-info-show">
-    <!--注文商品テーブル-->
-      <table class="table table-hover">
-        <thead>
-          <tr class="success">
-            <th>商品名</th></th>
-            <th>単価（税込）</th>
-            <th>数量</th>
-            <th>小計</th>
-            <th>製作ステータス</th>
-            <th><!--更新ボタン--></th>
-          </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-            <% @orders.each do |order| %>
-              <td><%= order.name %></td>
-              <td><%= order.price_including_tax %></td>
-              <td><%= order.item_count %></td>
-            <% end %>
-              <td><%= "小計が入ります！" %></td>
-              <%= form_with model:@production_status, url: admin_order_detail_path, method: :patch,local:true do |f| %>
-                <td><%= f.select :production_status, [["着手不可", "0"],["製作待ち", "1"],["製作中", "2"],["製作完了", "3"]], include_blank: "選択してください" %></td>
-                <td><%= f.submit :更新, class: "btn btn-md btn-primary" %></td>
-              <% end %>
-            </tr>
-        </tbody>
-      </table>
-    </div>
 
     <div class="col-sm-3 order-info-show">
     <!--金額情報テーブル-->
