@@ -3,6 +3,15 @@
     <h3 class="edit-title">配送先編集</h3>
     <div class="col-md-11">
         <%= form_with model: @address, local: true do |f| %>
+        <% if @address.errors.any? %>
+            <div class="alert alert-position">
+              <ul>
+                <% @address.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
           <div class="form-group">
             <label for="inputPostcode3" class="col-sm-3 control-label"><%= f.label :"郵便番号(ハイフンなし)" %></label>
               <div class="col-sm-3">

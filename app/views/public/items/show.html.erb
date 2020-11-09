@@ -15,6 +15,17 @@
       <p><span class="item-price">￥<%= ((@item.price * 1.1).round(2)).ceil.to_s(:delimited) %></span>　(税込)</p>
       <div class="buttons"></div>
       <%= form_with model:@cart_item, url: cart_items_path, method: :post, local:true do |f| %>
+      <% if @cart_item.present? %>
+        <% if @cart_item.errors.any? %>
+          <div class="alert alert-position">
+            <ul>
+              <% @cart_item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
         <span class="col-xs-4"><%= f.select :item_count, options_for_select((1..10).to_a), {include_blank: '個数選択'}, class: 'form-control' %></span>
         <%= hidden_field_tag :customer_id, current_customer.id %>
         <%= hidden_field_tag :item_id, @item.id %>

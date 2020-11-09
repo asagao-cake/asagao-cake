@@ -5,6 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-3">
       <%= form_with model: @customer, url: customer_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "customers/shared/error_messages", resource: resource %>
         <form class="form-horizontal">
           <div class="form-group">
             <label for="inputName3" class="col-sm-2 control-label"><%= f.label :名前 %></label>

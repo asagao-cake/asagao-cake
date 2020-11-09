@@ -48,6 +48,7 @@
         <%= f.hidden_field :postcode, :value => @order.postcode %>
         <%= f.hidden_field :address, :value => @order.address %>
         <%= f.hidden_field :name, :value => @order.name %>
+        <%= f.hidden_field :billing_amount, :value => @billing_amount %>
         <%= f.submit "購入を確定する", class: "submit-button btn btn-success btn-lg" %>
       <% end %>
     </div>

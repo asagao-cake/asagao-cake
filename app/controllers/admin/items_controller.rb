@@ -8,7 +8,6 @@ class Admin::ItemsController < ApplicationController
     if @item.save
       redirect_to admin_item_path(@item.id)
     else
-      @item = Item.new
       render 'new'
     end
   end
