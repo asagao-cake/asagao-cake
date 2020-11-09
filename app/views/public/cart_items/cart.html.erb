@@ -4,10 +4,10 @@
 
 <div class="container-fluid">
   <div class="row-sm-12 cart-info-table">
-
 		<% flash.each do |key, value| %>
 		    <%= content_tag(:div, value, class: "#{key} #{key}-position") %>
-		  <% end %>
+		<% end %>
+		<% flash.clear %>
 		<div id = destroyall_button>
 		<%= link_to " カートを空にする ", cart_items_destroy_all_path, method: :delete, class: "btn btn-danger" %>
 		</div>

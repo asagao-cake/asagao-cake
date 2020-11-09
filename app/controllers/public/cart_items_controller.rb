@@ -32,8 +32,9 @@ class Public::CartItemsController < ApplicationController
     if @cart_item.update(cart_item_count_params)
         redirect_to action: :cart
     else
+      flash[:alert] = '数量を整数で入力してください。'
       redirect_to action: :cart
-     flash[:alert] = '数量を整数で入力してください。'
+
     # @cart_items = CartItem.where(customer_id: current_customer.id)
     # @total_price = 0
     # @cart_items.each do |cart_item|
