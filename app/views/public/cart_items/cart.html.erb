@@ -31,13 +31,7 @@
 			<td><%= form_with model:cart_item, url: cart_item_path(cart_item.id), method: :patch, local:true do |f| %>
 					<%= f.text_field :item_count %>
        		<%= f.submit :変更, class: "btn btn-primary" %>
-       		<% if cart_item.errors.any? %>
-	            <ul>ああ
-	              <% cart_item.errors.full_messages.each do |message| %>
-	                <li><%= message %></li>
-	              <% end %>
-	            </ul>
-	        <% end %>
+
 					<% end %>
 			</td>
 			<td><%= ((((cart_item.item.price * 1.1).round(2)).ceil) * (cart_item.item_count)).to_s(:delimited) %></td>
