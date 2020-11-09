@@ -36,6 +36,11 @@ class Public::OrdersController < ApplicationController
     def create #注文情報登録
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
+        @order.name = params[:order][:name]
+        @order.postcode = params[:order][:postcode]
+        @order.address = params[:order][:address]
+        @order.payment_method = params[:order][:payment_method]
+        @order.billing_amount = params[:order][:billing_amount]
         @order.save
           current_customer.cart_items.each do |cart_item|
             @order_item = @order.order_items.new
@@ -53,6 +58,7 @@ class Public::OrdersController < ApplicationController
     end
 
     def index #注文履歴一覧
+        @orders = current_customer.orders.all
     end
 
     def show #注文履歴詳細
@@ -61,7 +67,7 @@ class Public::OrdersController < ApplicationController
     private
 
     def order_params
-        params.permit(:payment_method, :address, :postcode, :name)
+        params.permit(:payment_method, :address, :postcode, :name, :billing_amount)
     end
 
 end

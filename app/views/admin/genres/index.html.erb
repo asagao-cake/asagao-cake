@@ -6,6 +6,15 @@
       <div class="add_genre">
       <!--ジャンル登録-->
         <%= form_with model: @genre, url: admin_genres_path, local: true do |form| %>
+          <% if @genre.errors.any? %>
+            <div class="alert alert-position">
+              <ul>
+                <% @genre.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
           <%= "ジャンル" %>
           <%= form.text_field :name %>
           <!--ラジオボタン-->
