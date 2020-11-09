@@ -50,8 +50,8 @@
 
         <tbody>
             <tr>
-            <% @orders.each do |order| %>
-              <td><%= order.name %></td>
+            <% @order_items.each do |order| %>
+              <td><%= order.item_id %></td>
               <td><%= order.price_including_tax %></td>
               <td><%= order.item_count %></td>
             <% end %>
