@@ -1,5 +1,7 @@
 class Public::ItemsController < ApplicationController
 
+    
+    
     def index
         #ジャンル検索
         @genres = Genre.all
