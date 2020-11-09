@@ -1,8 +1,8 @@
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row-box">
     <!--ジャンル検索・サイドバー-->
-    <div class="genre-search col-xs-3">
+    <div class="genre-search col-sm-3">
       <%= render 'public/items/genre_search', genres: @genres %>
     </div>
 
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <h2>オススメ商品</h2>
+    <h2 class="recommended_item">オススメ商品</h2>
     <!--オススメ商品一覧・表示-->
     <div class="item-box">
       <% @recommended_items.each do |item| %>
@@ -25,12 +25,11 @@
           <%= link_to item_path(item) do %>
             <span class="item-image"><%= attachment_image_tag item, :image, :fill, 250, 150, format: 'jpeg', alt: '商品画像' %></span>
           <% end %>
-          <p><%= link_to item.name, item_path(item) %></p>
-          <p>￥<%= item.price %></p>
+          <p class="name"><%= link_to item.name, item_path(item) %></p>
+          <p class="price">￥<%= item.price %></p>
         </div>
       <% end %>
       <p id="item-index-link"><%= link_to " もっと見る> ", items_path %></p>
     </div>
   </div>
 </div>
-
