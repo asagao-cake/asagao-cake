@@ -1,0 +1,38 @@
+ja:
+  devise:
+    sessions:
+        signed_in: ''
+        signed_out: ''
+  activerecord:
+    models:
+      customer: 顧客
+      item: 商品
+      genre: ジャンル
+      shipping_address: 配送先
+    attributes:
+      customer:
+        last_name: 名前（姓）
+        first_name: 名前（名）
+        last_name_kana: 名前（姓・カナ）
+        first_name_kana: 名前（名・カナ）
+        phone_number: 電話番号
+        email: メールアドレス
+        encrypted_password: パスワード
+        postcode: 郵便番号
+        address: 住所
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+      item:
+        image: 写真
+        name: 商品名
+        description: 商品説明
+        genre: ジャンル
+        price: 税抜価格
+        is_sale: 販売ステータス
+      genre:
+        name: ジャンル名
+      shipping_address:
+        postcode: 郵便番号
+        address: 住所
+        name: 宛名
+

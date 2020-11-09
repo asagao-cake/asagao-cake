@@ -3,6 +3,15 @@
 </div>
 
 <%= form_with model:@item, url: admin_item_path(@item.id), method: :patch,local:true do |f| %>
+  <% if @item.errors.any? %>
+    <div class="alert alert-position">
+      <ul>
+        <% @item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
@@ -21,15 +30,15 @@
         </tr>
         <tr>
           <td><%= f.label :ジャンル %></td>
-          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択してください"  %></td><br>
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td><br>
         </tr>
         <tr>
-          <td><%= f.label :税込み価格 %></td>
+          <td><%= f.label :税抜価格 %></td>
           <td><%= f.text_field :price %></td><br>
         </tr>
         <tr>
           <td><%= f.label :販売ステータス %>
-          <td><%= f.select :is_sale, [["販売中", "1"],["販売停止中", "0"]], include_blank: "選択してください" %></td><br>
+          <td><%= f.select :is_sale, [["販売中", "1"],["販売停止中", "0"]] %></td><br>
         </tr>
       </table>
     <div id = "item-action-btn">

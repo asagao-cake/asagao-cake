@@ -2,7 +2,16 @@
   <h2>商品新規登録</h2>
 </div>
 
-<%= form_with model:@item, url: admin_items_path, method: :post,local:true do |f| %>
+<%= form_with model:@item, url: admin_items_path, method: :post, local:true do |f| %>
+  <% if @item.errors.any? %>
+    <div class="alert alert-position">
+      <ul>
+        <% @item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
@@ -23,7 +32,7 @@
           <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択してください"  %></td><br>
         </tr>
         <tr>
-          <td><%= f.label :税込み価格 %></td>
+          <td><%= f.label :税抜価格 %></td>
           <td><%= f.text_field :price %></td><br>
         </tr>
         <tr>

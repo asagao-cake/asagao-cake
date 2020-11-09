@@ -2,7 +2,7 @@ class Admin::OrdersController < ApplicationController
 
     def index #注文履歴一覧
         @orders = Order.all
-        
+
     end
 
     def show #注文履歴詳細
