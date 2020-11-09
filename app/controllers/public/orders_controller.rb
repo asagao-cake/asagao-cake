@@ -41,6 +41,7 @@ class Public::OrdersController < ApplicationController
         @order.address = params[:order][:address]
         @order.payment_method = params[:order][:payment_method]
         @order.billing_amount = params[:order][:billing_amount]
+        @order.shipping_fee = 800
         @order.save
           current_customer.cart_items.each do |cart_item|
             @order_item = @order.order_items.new
@@ -63,8 +64,9 @@ class Public::OrdersController < ApplicationController
 
     def show #注文履歴詳細
         @order = Order.find(params[:id])
+        @order_items = OrderItem.where(order_id: params[:id])
     end
-    
+
 
     private
 
