@@ -7,9 +7,7 @@ class Admin::OrdersController < ApplicationController
 
     def show #注文履歴詳細
         @order = Order.find(params[:id])
-        # @order_items = OrderItem.find(params[:id])
         @order_items = OrderItem.where(order_id: params[:id])
-        # byebug
     end
 
     def update #注文ステータス・制作ステータス
@@ -19,7 +17,7 @@ class Admin::OrdersController < ApplicationController
         redirect_to admin_order_path(@order_status)
         # 制作ステータス
         @production_status = OrderItem.find(params[:id])
-        @order_status.update(order_items_params)
+        @order_status.update(order_params)
         redirect_to admin_order_path(@order_status)
     end
 
@@ -27,5 +25,8 @@ class Admin::OrdersController < ApplicationController
       @order = Order.new
     end
 
-
+    private
+    def order_params
+        params.require(:order).permit(:status)
+    end
 end

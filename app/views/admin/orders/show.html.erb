@@ -51,13 +51,13 @@
         <tbody>
             <tr>
             <% @order_items.each do |order| %>
-              <td><%= order.item_id %></td>
+              <td><%= order.item.name %></td>
               <td><%= order.price_including_tax %></td>
               <td><%= order.item_count %></td>
             <% end %>
               <td><%= "小計が入ります！" %></td>
               <%= form_with model:@production_status, url: admin_order_detail_path, method: :patch,local:true do |f| %>
-                <td><%= f.select :production_status, [["着手不可", "0"],["製作待ち", "1"],["製作中", "2"],["製作完了", "3"]], include_blank: "選択してください" %></td>
+                <td><%= f.select :@production_status, [["着手不可", "0"],["製作待ち", "1"],["製作中", "2"],["製作完了", "3"]], include_blank: "選択してください" %></td>
                 <td><%= f.submit :更新, class: "btn btn-md btn-primary" %></td>
               <% end %>
             </tr>
