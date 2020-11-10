@@ -20,7 +20,7 @@
         <tbody>
           <% @orders.each do |order| %>
             <tr>
-              <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+              <td><%= link_to order.created_at.strftime("%Y-%m-%d %H:%M"), admin_order_path(order.id)  %></td>
               <td><%= order.name %></td>
               <% count = 0 %>
               <% order.order_items.each do |order_item| %>

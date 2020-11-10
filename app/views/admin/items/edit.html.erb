@@ -18,8 +18,8 @@
       <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
       <%= f.attachment_field :image %>
     </div>
-    <div class="col-lg-8">
-      <table class="item-table">
+    <div class="col-lg-6">
+      <table class="table table-hover table-inverse">
         <tr>
           <td><%= f.label :商品名 %></td>
           <td><%= f.text_field :name %></td>
