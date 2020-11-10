@@ -9,6 +9,7 @@ ja:
       item: 商品
       genre: ジャンル
       shipping_address: 配送先
+      cart_item: カートアイテム
     attributes:
       customer:
         last_name: 名前（姓）
@@ -35,4 +36,5 @@ ja:
         postcode: 郵便番号
         address: 住所
         name: 宛名
-
+      cart_item:
+        item_count: 注文個数
