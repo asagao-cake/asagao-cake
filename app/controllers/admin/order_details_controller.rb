@@ -10,7 +10,6 @@ class Admin::OrderDetailsController < ApplicationController
             @order_item.order.update(status: "製作中")
         elsif @order_item.production_status == "製作完了"
             complete_status = @order_items.pluck(:production_status).grep("製作完了")
-            # byebug
             if complete_status.size == @order_items.count
                 @order_item.order.update(status: "発送準備中")
             end
