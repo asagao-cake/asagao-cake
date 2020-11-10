@@ -6,10 +6,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-4">
+        <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
         <div class="field">
           <table>
             <tr>
-              <td><%= f.label :メール %></td><br />
+              <td><%= f.label :メールアドレス %></td><br />
               <td><%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"col-md-12"%></td>
             <tr>
           </table>

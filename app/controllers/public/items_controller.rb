@@ -1,14 +1,12 @@
 class Public::ItemsController < ApplicationController
 
-    
-    
     def index
         #ジャンル検索
         @genres = Genre.all
         if @genre = Genre.find_by(name: params[:name])
-           @items = @genre.items.page(params[:page]).reverse_order
+           @items = @genre.items.where(is_sale: true).page(params[:page]).reverse_order
         else
-	         @items = Item.page(params[:page]).reverse_order
+	         @items = Item.where(is_sale: true).page(params[:page]).reverse_order
         end
         #ページネーション
         @pages = @items.all.page(params[:page])
