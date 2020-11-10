@@ -1,28 +1,28 @@
-<div id = "title">
-  <h2>管理者ログイン</h2>
+<div class="title-area">
+  <h3><span class="order-info-title">　管理者ログイン　</span></h3>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="container">
-    <div class="row">
+    <div class="row-sm-12">
       <div class="col-md-8 col-md-offset-4">
         <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
-        <div class="field">
+        <div class="field input-lg">
           <table>
             <tr>
-              <td><%= f.label :メールアドレス %></td><br />
+              <td><%= f.label :メールアドレス %>　</td><br/>
               <td><%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"col-md-12"%></td>
             <tr>
           </table>
         </div>
 
-        <div class="field">
+        <div class="field input-lg">
           <table>
             <tr>
-              <td><%= f.label :パスワード %></td><br />
-              <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+              <td><%= f.label :パスワード %></td><br/>
+              <td>　　　<%= f.password_field :password, autocomplete: "current-password" %></td>
             </tr>
           </table>
         </div>
@@ -37,9 +37,9 @@
         <!--<% end %>-->
         <br>
       <div class="row">
-        <div class="col-md-8 col-md-offset-4">
-          <div class="actions">
-            <%= f.submit "ログイン",class: "btn btn-primary btn-lg" %>
+        <div class="col-md-12">
+          <div class="actions"></br>
+            <%= f.submit "　ログイン　",class: "btn btn-primary btn-lg" %>
           </div>
         </div>
       </div>
