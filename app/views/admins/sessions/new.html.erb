@@ -9,7 +9,7 @@
         <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
-        <div class="field form-control input-lg">
+        <div class="field input-lg">
           <table>
             <tr>
               <td><%= f.label :メールアドレス %>　</td><br/>
@@ -18,11 +18,11 @@
           </table>
         </div>
 
-        <div class="field">
+        <div class="field input-lg">
           <table>
             <tr>
               <td><%= f.label :パスワード %></td><br/>
-              <td>　　　<%= f.password_field :password, autocomplete: "current-password" %></td>
+              <td>　　　<%= f.password_field :password, autofocus: true, autocomplete: "current-password" %></td>
             </tr>
           </table>
         </div>

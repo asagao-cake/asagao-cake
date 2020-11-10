@@ -9,10 +9,11 @@
         </ul>
       </div>
     <% end %>
+    <div class="title-area">
+      <h3 class="mypage-title">　マイページ　</h3>
+    </div>
     <div class="col-md-10 col-md-offset-3">
-      <div class="title-area">
-        <h3 class="mypage-title">マイページ</h3>
-      </div>
+ 
       <%= form_with url: customers_path, model:@customer,　id: 'new_user', class: 'new_user', local: true do |f| %>
         <form class="form-horizontal">
           <div class="form-group">
@@ -64,9 +65,9 @@
           </div>
           <br></br><br></br>
           <div class="form-group">
-            <div class="col-md-offset-2 col-md-7">
-              <%= f.submit "編集内容を保存する", class:"btn btn-success" %>
-              <%= link_to "退会する", customers_unsubscribe_path, class:"btn btn-danger pull-right" %>
+            <div class="col-md-offset-1 col-md-6 customer-info-button">
+              <%= f.submit "　編集内容を保存する　", class:"btn btn-info btn-lg" %>
+              <%= link_to "　退会する　", customers_unsubscribe_path, class:"btn btn-danger pull-right btn-lg" %>
             </div>
           </div>
         </form>
