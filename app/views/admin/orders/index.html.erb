@@ -1,6 +1,6 @@
 <div class="title-area">
   <h3><span class="order-info-title">　注文履歴一覧　</span></h3>
-</div>is
+</div>
 
 <div class="container-fluid">
   <div class="row-sm-12 order-info-table">
@@ -32,8 +32,9 @@
           <% end %>
         </tbody>
       </table>
+      <!--ページネーション-->
+    <divclass="pagenation"><%= paginate @pages %></div>
     </div>
   </div>
-    <!--ページネーション-->
 
 </div>
