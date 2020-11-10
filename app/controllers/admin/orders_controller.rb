@@ -11,7 +11,7 @@ class Admin::OrdersController < ApplicationController
         @order_items = OrderItem.where(order_id: params[:id])
         @total_fee = (@order.billing_amount - @order.shipping_fee).to_s(:delimited)
 =======
-        
+
 >>>>>>> origin/develop
     end
 
