@@ -9,7 +9,7 @@
         <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
-        <div class="field input-lg">
+        <div class="field form-control input-lg">
           <table>
             <tr>
               <td><%= f.label :メールアドレス %>　</td><br/>
@@ -18,7 +18,7 @@
           </table>
         </div>
 
-        <div class="field input-lg">
+        <div class="field">
           <table>
             <tr>
               <td><%= f.label :パスワード %></td><br/>
