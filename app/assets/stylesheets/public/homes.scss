@@ -46,10 +46,32 @@
 }
 
 /*Aboutページ*/
-.row {
+.row-about {
   margin-top: 50px;
 }
 
 .text-center {
   font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+.shop-info {
+  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.info-title {
+  font-size: 20px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+footer {
+  width: 45%;
+  margin: 0 auto;
+}
+
+
+th {
+  font-size: 17px;
+  text-align: center;
 }
