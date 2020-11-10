@@ -24,11 +24,7 @@
           <th>注文ステータス</th>
           <%= form_with model:@order, url: admin_order_path, method: :patch,local:true do |f| %>
             <td>
-<<<<<<< HEAD
               <%= f.select :status, Order.statuses.keys %>
-=======
-              <%= f.select :status, Order.statuses.keys, :selected=>Order.statuses[@order.status] %>
->>>>>>> origin/develop
               <%= f.submit :更新, class: "btn btn-md btn-primary" %>
             </td>
           <% end %>
@@ -38,7 +34,6 @@
   </div>
 
 
-<<<<<<< HEAD
         <tbody>
             <tr>
             <% @order_items.each do |order_item| %>
@@ -58,8 +53,6 @@
         </tbody>
       </table>
     </div>
-=======
->>>>>>> origin/develop
 
     <div class="col-sm-3 order-info-show">
     <!--金額情報テーブル-->
