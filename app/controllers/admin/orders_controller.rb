@@ -7,12 +7,8 @@ class Admin::OrdersController < ApplicationController
 
     def show #注文履歴詳細
         @order = Order.find(params[:id])
-<<<<<<< HEAD
         @order_items = OrderItem.where(order_id: params[:id])
         @total_fee = (@order.billing_amount - @order.shipping_fee).to_s(:delimited)
-=======
-
->>>>>>> origin/develop
     end
 
     def update #注文ステータス
