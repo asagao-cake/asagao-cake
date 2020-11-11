@@ -26,10 +26,31 @@
   border-spacing: 10px 20px;
 }
 
-.customer-title{
+// .customer-title-area{
+//   texr-align :center;
+// }
+
+.customershow-title-area{
+  margin-top: 50px;
+  text-align: left;
+
+}
+.customer-show-title{
   background-color: #D8D8D8;
   padding: 4px;
   width: 40%;
   margin-bottom: 50px;
-  tect-align :center;
+  text-align :center;
+}
+
+.customer-edit-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 40%;
+  margin-bottom: 50px;
+  text-align :center;
+}
+
+.customer-edit-button-position{
+  margin-bottom :50px;
 }
