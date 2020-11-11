@@ -1,5 +1,5 @@
 <div class="title-area">
-  <h3 class="signup">新規会員登録</h3>
+  <h3><span class="signup">　新規会員登録　</span></h3>
 </div>
 <div class="container">
   <div class="row">
@@ -10,81 +10,80 @@
           <div class="form-group">
             <label for="inputName3" class="col-sm-2 control-label"><%= f.label :名前 %></label>
               <div class="col-sm-3">
-                <%= f.label :"（姓）" %><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", id:"inputName3" %>
+                　<%= f.label :"（姓）" %><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", id:"inputName3" %>
               </div>
               <div class="col-sm-3">
-                <%= f.label :"(名)" %><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", id:"inputName3" %>
+                　<%= f.label :"(名)" %><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", id:"inputName3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputName3" class="col-sm-2 control-label"><%= f.label :フリガナ %></label>
               <div class="col-sm-3">
-                <%= f.label :"(姓カナ)" %><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "form-control", id:"inputName3" %>
+                　<%= f.label :"(姓カナ)" %><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "form-control", id:"inputName3" %>
               </div>
               <div class="col-sm-3">
-                <%= f.label :"(名カナ)" %><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "form-control", id:"inputName3" %>
+                　<%= f.label :"(名カナ)" %><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "form-control", id:"inputName3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label"><%= f.label :メールアドレス %></label>
               <div class="col-sm-5">
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail3" %>
+                　<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputPostcode3" class="col-sm-2 control-label"><%= f.label :"郵便番号(ハイフンなし)" %></label>
               <div class="col-sm-5">
-                <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "form-control", id:"inputPostcode3" %>
+                　　　　　　<%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "form-control", id:"inputPostcode3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputAddress3" class="col-sm-2 control-label"><%= f.label :住所 %></label>
               <div class="col-sm-5">
-                <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control", id:"inputAddress3" %>
+                　<%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control", id:"inputAddress3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputPhonenumber3" class="col-sm-2 control-label"><%= f.label :電話番号 %></label>
               <div class="col-sm-5">
-                <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control", id:"inputPhonenumber3" %>
+                　<%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control", id:"inputPhonenumber3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputPassward3" class="col-sm-2 control-label"><%= f.label :"パスワード(6文字以上)" %></label>
               <div class="col-sm-5">
-                <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id:"inputPassward3" %>
+                　<%= f.password_field :password, autocomplete: "new-password", class: "form-control", id:"inputPassward3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <label for="inputPassward3" class="col-sm-2 control-label"><%= f.label :"パスワード(確認用)" %></label>
               <div class="col-sm-5">
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id:"inputPassward3" %>
+                　<%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id:"inputPassward3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <%= f.submit "新規登録", class:"btn btn-success" %>
+              　<%= f.submit "　　　新規登録　　　", class:"btn btn-success btn-lg" %>
             </div>
           </div>
         </form>
       <% end %>
+      </br></br></br>
       <div class="col-md-10">
-      <h4 class="signin-title">　既に登録済の方　</h4></br>
+      <h4 class="signin-title">　既に登録済みの方　</h4></br>
       <div class="col-sm-7">
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <p>　<%= link_to "こちら", new_registration_path(resource_name)%>からログインてください</p>
+        <%- if devise_mapping.registerable? && controller_name != 'sessions' %>
+          <p>　<%= link_to "こちら", new_customer_session_path %>からログインてください</p>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-

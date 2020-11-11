@@ -53,6 +53,12 @@
   margin-top: 20px;
 }
 
+.greeting {
+  line-height: 50px;
+  color: #656565;
+  font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
 .button {
   padding-right: 30px;
   position: absolute;
@@ -68,15 +74,18 @@
   text-decoration: none;
 }
 
-// footer {
-//   height: 100px;
-//   background-color: #E2D8C9;
-//   border-color: #E2D8C9;
-//   font-size: 20px;
-//   text-align: center;
-//   line-height: 100px;
-//   font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
-// }
+footer {
+  position: absolute;/* 絶対位置 */
+  bottom: 0;
+  height: 130px;
+  width: 100%;
+  background-color: #E2D8C9;
+  border-color: #E2D8C9;
+  font-size: 20px;
+  text-align: center;
+  line-height: 130px;
+  font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
 
 .search-form{
   padding-right: 130px;
@@ -104,4 +113,8 @@
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+html,body{
+  height:100%;
 }

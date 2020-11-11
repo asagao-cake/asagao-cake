@@ -25,7 +25,7 @@
         <tr>
           <th>注文ステータス</th>
             <td>
-              <%= f.select :status, Order.statuses.keys %>
+              <%= f.select :status, Order.statuses.keys, :selected=>Order.statuses[@order.status] %>
               <%= f.submit :更新, class: "btn btn-md btn-primary" %>
             </td>
           <% end %>
@@ -33,6 +33,7 @@
         </tr>
       </table>
   </div>
+
 <div class="col-sm-9 order-info-show">
   <table class= "table table-noborder table-hover table-inverse">
     <thead>
