@@ -1,6 +1,7 @@
 class Public::CartItemsController < ApplicationController
 
   def cart
+    @customer = current_customer
     @cart_items = CartItem.where(customer_id: current_customer.id)
     @total_price = 0
     @cart_items.each do |cart_item|
