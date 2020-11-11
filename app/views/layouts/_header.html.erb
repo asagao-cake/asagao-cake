@@ -15,10 +15,12 @@
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if customer_signed_in? %>
+            <li class="button greeting">ようこそ　<%= @customer.last_name %> <%= @customer.first_name %>さん！　</li>
             <li class="button"><%= link_to " マイページ ", customers_my_page_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " カート ", cart_items_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete, class:"btn btn-default btn-lg" %></li>
+
           <% else %>
             <li class="button"><%= link_to " About ", homes_about_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
