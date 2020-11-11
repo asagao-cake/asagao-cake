@@ -1,10 +1,12 @@
 class Public::OrdersController < ApplicationController
 
     def new #注文情報入力画面
+        @customer = current_customer
         @orders = current_customer.orders.new
     end
 
     def confirm #注文情報確認
+        @customer = current_customer
         @cart_items = CartItem.where(customer_id: current_customer.id)
         @shipping_fee = 800
         @total_price = 0
@@ -56,13 +58,16 @@ class Public::OrdersController < ApplicationController
     end
 
     def order_complete #注文完了
+        @customer = current_customer
     end
 
     def index #注文履歴一覧
+        @customer = current_customer
         @orders = current_customer.orders.all
     end
 
     def show #注文履歴詳細
+        @customer = current_customer
         @order = Order.find(params[:id])
         @order_items = OrderItem.where(order_id: params[:id])
     end
