@@ -9,14 +9,14 @@
         </ul>
       </div>
     <% end %>
-    <div class="col-md-10 col-md-offset-3">
-      <div class="title-area">
-        <h3 class="mypage-title">マイページ</h3>
-      </div>
+    <div class="title-area">
+      <h3 class="mypage-title">　登録情報編集　</h3>
+    </div>
+    <div class="col-md-10 col-md-offset-2">
       <%= form_with url: customers_path, model:@customer,　id: 'new_user', class: 'new_user', local: true do |f| %>
         <form class="form-horizontal">
           <div class="form-group">
-            <label for="inputName3" class="col-sm-2 control-label"><%= f.label :名前 %></label>
+            <label for="inputName3" class="col-sm-3 control-label"><%= f.label :名前 %></label>
               <div class="col-sm-3">
                 <%= f.label :"（姓）" %><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", id:"inputName3" %>
               </div>
@@ -26,47 +26,47 @@
           </div>
           <br></br><br></br>
           <div class="form-group">
-            <label for="inputName3" class="col-sm-2 control-label"><%= f.label :フリガナ %></label>
+            <label for="inputName3" class="col-sm-3 control-label"><%= f.label :フリガナ %></label>
               <div class="col-sm-3">
-                <%= f.label :"(姓カナ)" %><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "form-control", id:"inputName3" %>
+                <%= f.label :"(セイ)" %><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "form-control", id:"inputName3" %>
               </div>
               <div class="col-sm-3">
-                <%= f.label :"(名カナ)" %><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "form-control", id:"inputName3" %>
+                <%= f.label :"(メイ)" %><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "form-control", id:"inputName3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label"><%= f.label :メールアドレス %></label>
+            <label for="inputEmail3" class="col-sm-3 control-label"><%= f.label :メールアドレス %></label>
               <div class="col-sm-5">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail3" %>
               </div>
           </div>
-          <br></br><br></br>
+          <br></br><br>
           <div class="form-group">
-            <label for="inputPostcode3" class="col-sm-2 control-label"><%= f.label :"郵便番号(ハイフンなし)" %></label>
+            <label for="inputPostcode3" class="col-sm-3 control-label"><%= f.label :"郵便番号(ハイフンなし)" %></label>
               <div class="col-sm-5">
                 <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "form-control", id:"inputPostcode3" %>
               </div>
           </div>
-          <br></br><br></br>
+          <br></br><br>
           <div class="form-group">
-            <label for="inputAddress3" class="col-sm-2 control-label"><%= f.label :住所 %></label>
+            <label for="inputAddress3" class="col-sm-3 control-label"><%= f.label :住所 %></label>
               <div class="col-sm-5">
                 <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control", id:"inputAddress3" %>
               </div>
           </div>
-          <br></br><br></br>
+          <br></br><br>
           <div class="form-group">
-            <label for="inputPhonenumber3" class="col-sm-2 control-label"><%= f.label :電話番号 %></label>
+            <label for="inputPhonenumber3" class="col-sm-3 control-label"><%= f.label :電話番号 %></label>
               <div class="col-sm-5">
                 <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control", id:"inputPhonenumber3" %>
               </div>
           </div>
           <br></br><br></br>
           <div class="form-group">
-            <div class="col-md-offset-2 col-md-7">
-              <%= f.submit "編集内容を保存する", class:"btn btn-success" %>
-              <%= link_to "退会する", customers_unsubscribe_path, class:"btn btn-danger pull-right" %>
+            <div class="col-md-offset-1 col-md-6 customer-info-button">
+              <%= f.submit "　編集内容を保存する　", class:"btn btn-info btn-lg" %>
+              <%= link_to "　退会する　", customers_unsubscribe_path, class:"btn btn-danger pull-right btn-lg" %>
             </div>
           </div>
         </form>
