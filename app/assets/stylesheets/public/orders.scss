@@ -55,9 +55,19 @@
 
 /*注文完了画面*/
 .complete-text {
-  font-size: 20px;
+  font-size: 23px;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 100px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+.thanks {
+  width: 520px;
+  height: 520px;
+  background-image: image-url('thankscake.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /*注文履歴一覧画面*/
