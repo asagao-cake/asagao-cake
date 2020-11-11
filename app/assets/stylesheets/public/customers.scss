@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signup-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 30%;
+.title-area {
+  margin-top: 50px;
 }
+
+.signup{
+  background-color: #D8D8D8;
+  width: 17%;
+  padding: 3px;
+}
+
 .login-title{
   background-color: #D8D8D8;
   padding: 4px;
@@ -32,8 +37,20 @@
   margin-bottom: 6em;
 }
 
+.signup-title {
+  background-color: #D8D8D8;
+  width: 30%;
+  padding: 3px;
+}
+
 /*ログイン画面*/
 .row-login {
   margin-top: 50px;
   padding-left: 200px;
+}
+
+.signin-title {
+  background-color: #D8D8D8;
+  width: 25%;
+  padding: 3px;
 }
