@@ -14,11 +14,12 @@
       <!--メニューボタン-->
       <nav>
         <ul class="nav navbar-nav navbar-right">
-          <% if customer_signed_in? %>
-            <li class="button"><%= link_to " マイページ ", customers_my_page_path, class:"btn btn-default btn-lg" %></li>
-            <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
-            <li class="button"><%= link_to " カート ", cart_items_path, class:"btn btn-default btn-lg" %></li>
-            <li class="button"><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete, class:"btn btn-default btn-lg" %></li>
+          <% if admin_signed_in? %>
+            <li><%= link_to "商品一覧", admin_items_path, class:"btn btn-default btn-lg admin-button" %> </li>
+            <li><%= link_to "会員一覧", admin_customers_path, class:"btn btn-default btn-lg admin-button" %></li>
+            <li><%= link_to "注文履歴一覧", admin_orders_path, class:"btn btn-default btn-lg admin-button" %></li>
+            <li><%= link_to "ジャンル一覧", admin_genres_path, class:"btn btn-default btn-lg admin-button" %></li>
+            <li><%= link_to "ログアウト", admin_sign_out_path, method: :delete, class:"btn btn-default btn-lg admin-button" %></li>
           <% else %>
             <li class="button"><%= link_to " About ", homes_about_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
@@ -28,5 +29,13 @@
         </ul>
       </nav>
       <br></br><br></br>
+    <% if admin_signed_in? %>
+    <div class="search-form">
+      <%= form_tag(items_path,:method => 'get') do %>
+        <%= text_field_tag :name %>
+        <%= submit_tag '検索' %>
+      <% end %>
+    </div>
+    <% end %>
   </div>
 </header>
