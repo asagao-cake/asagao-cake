@@ -22,8 +22,10 @@
       	<tbody>
       	  <% @orders.each do |order| %>
       		<tr>
-      			<td><%= order.created_at.strftime('%y/%m/%d') %></td>
-      			<td><%= order.address %></td>
+      			<td><%= order.created_at.strftime("%Y/%m/%d") %></td>
+      			<td><%= order.postcode %><br>
+      			    <%= order.address %><br>
+      			    <%= order.name %></td>
       			<td>
       			  <% order.order_items.each do |order_items| %>
       			    <%= order_items.item.name %></br>

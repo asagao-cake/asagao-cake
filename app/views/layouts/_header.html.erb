@@ -19,6 +19,7 @@
             <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " カート ", cart_items_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " ログアウト ", destroy_customer_session_path, method: :delete, class:"btn btn-default btn-lg" %></li>
+            
           <% elsif admin_signed_in? %>
             <li><%= link_to "商品一覧", admin_items_path, class:"btn btn-default btn-lg admin-button" %> </li>
             <li><%= link_to "会員一覧", admin_customers_path, class:"btn btn-default btn-lg admin-button" %></li>
