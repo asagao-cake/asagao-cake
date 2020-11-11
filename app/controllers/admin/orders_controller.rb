@@ -12,9 +12,12 @@ class Admin::OrdersController < ApplicationController
     end
 
     def update #注文ステータス
-        @order_status = Order.find(params[:id])
-        @order_status.update(order_params)
-        redirect_to admin_order_path(params[:id])
+        @order = Order.find(params[:id])
+        @order.update(order_params)
+         if @order.status == "入金確認"
+            @order.order_items.update(production_status: "製作待ち")
+         end
+         redirect_to admin_order_path(params[:id])
     end
 
     def new

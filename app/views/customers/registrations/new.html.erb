@@ -76,6 +76,14 @@
           </div>
         </form>
       <% end %>
+      <div class="col-md-10">
+      <h4 class="signin-title">　既に登録済の方　</h4></br>
+      <div class="col-sm-7">
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <p>　<%= link_to "こちら", new_registration_path(resource_name)%>からログインてください</p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
