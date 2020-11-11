@@ -2,12 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*共通*/
-.container-fluid {
+/*トップページ*/
+.top-page {
   height: 700px;
 }
-
-/*トップページ*/
 .row-box {
   margin-top: 50px;
   height: 700px;
@@ -46,6 +44,11 @@
 }
 
 /*Aboutページ*/
+.about-page {
+  width: 100%;
+  height: 1020px;
+}
+
 .row-about {
   margin-top: 50px;
 }
@@ -65,8 +68,8 @@
   font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
-footer {
-  width: 45%;
+.shop-info-table {
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -75,3 +78,11 @@ th {
   font-size: 17px;
   text-align: center;
 }
+
+.about-footer {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;/* 相対位置 */
+  box-sizing: border-box;
+}
+
