@@ -3,7 +3,15 @@ class Admin::OrdersController < ApplicationController
     layout 'admin'
 
     def index #注文履歴一覧
-        @orders = Order.page(params[:page]).per(10)
+        case params[:order_sort]
+        when "0"
+           @orders = Order.where(created_at: Date.today.in_time_zone.all_day).page(params[:page]).per(10)
+        when "1"
+           @customer = Customer.find(params[:customer_id])
+           @orders = @customer.orders.page(params[:page]).per(10)
+        else
+           @orders = Order.all.page(params[:page]).per(10)
+        end
     end
 
     def show #注文履歴詳細
