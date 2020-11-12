@@ -6,7 +6,7 @@ class Admin::OrderDetailsController < ApplicationController
         # 制作ステータス
         @order_item = OrderItem.find(params[:id])
         @order_item.production_status = params[:order_item][:production_status]
-        @order_item.save
+        @order_item.update(order_item_params)
         @order_items = OrderItem.where(order_id: @order_item.order_id)
         if @order_item.production_status == "製作中"
             @order_item.order.update(status: "製作中")

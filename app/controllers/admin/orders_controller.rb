@@ -20,6 +20,7 @@ class Admin::OrdersController < ApplicationController
             @order.order_items.update(production_status: "製作待ち")
          end
          redirect_to admin_order_path(params[:id])
+         
     end
 
     def new
