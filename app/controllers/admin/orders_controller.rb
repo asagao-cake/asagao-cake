@@ -3,8 +3,7 @@ class Admin::OrdersController < ApplicationController
     layout 'admin'
 
     def index #注文履歴一覧
-        @orders = Order.all
-        @pages = Order.all.page(params[:page]).per(10)
+        @orders = Order.page(params[:page]).per(10)
     end
 
     def show #注文履歴詳細
