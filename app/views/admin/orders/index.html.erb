@@ -1,10 +1,6 @@
-<div class="title-area">
-  <h3><span class="order-info-title">　注文履歴一覧　</span></h3>
-</div>
-
-<div class="container-fluid">
+<h3 class="order-admin-title"><span>　注文履歴一覧　</span></h3>
+<div class="container">
   <div class="row-sm-12 order-info-table">
-
     <div class="col-sm-12 table-responsive">
     <!--注文履歴一覧テーブル-->
       <table class="table table-hover">
@@ -33,7 +29,7 @@
         </tbody>
       </table>
       <!--ページネーション-->
-    <divclass="pagenation"><%= paginate @pages %></div>
+    <div class="pagenation"><%= paginate @orders %></div>
     </div>
   </div>
 

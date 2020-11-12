@@ -1,9 +1,12 @@
 // Place all the styles related to the admin::customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#title{
+.customer-index-title{
   margin-left :100px;
-  margin-bottom :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 10%;
+  padding: 1px 10px;
 }
 
 .customer-indextable{
@@ -14,12 +17,12 @@
   border-spacing: 0px 5px;
 }
 
-.customer-indextable th{
-  background-color: #C0C0C0
-}
-.customer-indextable td{
-  border-bottom:solid 1px #808080;
-}
+// .customer-indextable th{
+//   background-color: #C0C0C0
+// }
+// .customer-indextable td{
+//   border-bottom:solid 1px #808080;
+// }
 
 .customer-table{
   border-collapse: separate;
@@ -38,19 +41,16 @@
 .customer-show-title{
   background-color: #D8D8D8;
   padding: 4px;
-  width: 40%;
+  display: inline-block;
   margin-bottom: 50px;
-  text-align :center;
+  tect-align :center;
 }
 
-.customer-edit-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 40%;
-  margin-bottom: 50px;
-  text-align :center;
-}
-
-.customer-edit-button-position{
+.show-title-admin{
+  margin-left :160px;
   margin-bottom :50px;
+  margin-top: 50px;
+  background-color: #D8D8D8;
+  display: inline-block;
+  padding: 1px 10px;
 }

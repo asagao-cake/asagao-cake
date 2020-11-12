@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#title{
+.edit-title-admin{
   margin-left :100px;
   margin-bottom :50px;
+  background-color: #D8D8D8;
+  padding: 1px 10px;
+  width: 10%;
 }
 
 #item-action-btn{
@@ -17,6 +20,14 @@
   width: 1000px;
   border-collapse: separate;
   border-spacing: 0px 5px;
+}
+
+.index-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 10%;
+  padding: 1px 10px;
 }
 
 .item-indextable th{
@@ -33,4 +44,20 @@
 
 .image-position{
   padding-top :70px;
+}
+
+.show-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 10%;
+  padding: 1px 10px;
+}
+
+.new-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 14%;
+  padding: 1px 9px;
 }
