@@ -1,7 +1,4 @@
 class Public::CartItemsController < ApplicationController
-
-  layout 'admin'
-
   def cart
     @customer = current_customer
     @cart_items = CartItem.where(customer_id: current_customer.id)
