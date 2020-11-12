@@ -1,3 +1,25 @@
 // Place all the styles related to the admin::genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.genre-index-title-position{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 60%;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  text-align :center;
+}
+
+.genre-add{
+  margin-bottom: 20px;
+}
+
+.genre-edit-title-position{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 40%;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  text-align :center;
+}
