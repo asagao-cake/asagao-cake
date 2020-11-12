@@ -1,6 +1,7 @@
 class Public::ItemsController < ApplicationController
 
     def index
+        @customer = current_customer
         #ジャンル検索
         @genres = Genre.where(is_valid: true)
         if @genre = Genre.find_by(name: params[:name])
@@ -13,6 +14,7 @@ class Public::ItemsController < ApplicationController
     end
 
     def show
+        @customer = current_customer
         @item = Item.find(params[:id])
         @genres = Genre.where(is_valid: true)
         # @cart_item = CartItem.find_by(item_id: params[:id],customer_id: current_customer.id)

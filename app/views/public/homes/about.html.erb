@@ -1,10 +1,10 @@
-<div class="container-fluid">
+<div class="container-fluid about-page">
   <div class="row row-about">
-    
+
     <h1 class="text-center">
       About
     </h1>
-    
+
     <main class="text-center text-about">
       </br>
       ながのCAKEは全国発送可能なケーキ屋さんです。<br>
@@ -13,15 +13,15 @@
       また、全国へ発送可能ですので「いつ」でも「どこ」でもご注文いただけます。<br>
       ぜひご注文ください。
     </main>
-    
+
     <div class="text-center table-responsive">
       <%= image_tag('public-homes-about.png', :size =>'600x400') %>
     </div>
-    
+
   </div>
-  
+
   <div class="row-sm-12 shop-info">
-    <footer>
+    <div class="shop-info-table">
       <p class="info-title">　店舗情報</p>
       <table class="table table-bordered">
         <tr>
@@ -54,7 +54,13 @@
               　地方発送（お取り寄せ） / アレルギー対応 / バースデーケーキ / バースデーケーキ（予約）</td>
         </tr>
       </table>
-    </footer>
+    </div>
+  </div>
+  
+  <!--フッター-->
+  <div class="container-fluid about-footer">
+    <%= render 'layouts/footer' %>
   </div>
   
 </div>
+

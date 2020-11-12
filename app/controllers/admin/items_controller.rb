@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+
+  layout 'admin'
+
   def new
     @item = Item.new
   end
@@ -18,7 +21,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def index
-     @items = Item.all
+     @items = Item.page(params[:page]).per(10)
   end
 
   def edit

@@ -1,8 +1,9 @@
 class Admin::OrdersController < ApplicationController
 
+    layout 'admin'
+
     def index #注文履歴一覧
-        @orders = Order.all
-        @pages = Order.all.page(params[:page]).per(10)
+        @orders = Order.page(params[:page]).per(10)
     end
 
     def show #注文履歴詳細
@@ -12,13 +13,12 @@ class Admin::OrdersController < ApplicationController
     end
 
     def update #注文ステータス
-             # 注文ステータス
-            @order = Order.find(params[:id])
-            @order.update(order_params)
-            if @order.status == "入金確認"
-                @order.order_items.update(production_status: "製作待ち")
-            end
-            redirect_to admin_order_path(params[:id])
+        @order = Order.find(params[:id])
+        @order.update(order_params)
+         if @order.status == "入金確認"
+            @order.order_items.update(production_status: "製作待ち")
+         end
+         redirect_to admin_order_path(params[:id])
     end
 
     def new
@@ -26,6 +26,7 @@ class Admin::OrdersController < ApplicationController
     end
 
     private
+
     def order_params
         params.require(:order).permit(:status)
     end

@@ -1,8 +1,8 @@
 <div class= "container">
-
   <div class="row">
     <div class="col-sm-5">
-      <h3>ジャンル一覧・追加</h3>
+      <h3><span class="genre-title-index">ジャンル一覧・追加</span></h3>
+      <br></br>
       <div class="add_genre">
       <!--ジャンル登録-->
         <%= form_with model: @genre, url: admin_genres_path, local: true do |form| %>
@@ -15,6 +15,7 @@
               </ul>
             </div>
           <% end %>
+          <div class = "genre-add">
           <%= "ジャンル" %>
           <%= form.text_field :name %>
           <!--ラジオボタン-->
@@ -23,11 +24,13 @@
           <%= form.radio_button :is_valid, :false %>
           <%= form.label :is_vaild, "無効", value: :false %>
           <%= form.submit "追加", class: "btn btn-info" %>
+          </div>
         <% end %>
+
       </div>
     </div>
   </div>
-
+<br></br>
   <div class="row">
     <div class="col-sm-5">
       <div class="genre_index">
