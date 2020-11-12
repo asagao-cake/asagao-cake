@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container quit-box">
   <div class="row">
     <div class="top-message">
       <h3 class="text-center"><strong>本当に退会しますか？</strong></h3>
@@ -7,11 +7,11 @@
       <h4 class="text-center">これまでの購入履歴が閲覧できなくなります。</h4>
       <h4 class="text-center">退会する場合は退会するをクリックしてください。</h4>
     </div>
-    <br></br>
+    <br></br></br>
     <div class="col-md-4 col-md-offset-4">
       <div class="btn-toolbar">
-        <%= link_to " 退会しない ", customers_my_page_path, class:"btn btn-primary pull-left" %>
-        <%= link_to "退会する", customers_quit_path, method: :patch, data: {confirm: "本当に退会してもよろしいですか？"}, class:"btn btn-danger pull-right" %>
+        <%= link_to "　退会しない　", customers_my_page_path, class:"btn btn-primary pull-left btn-lg" %>
+        <%= link_to "　退会する　", customers_quit_path, method: :patch, data: {confirm: "本当に退会してもよろしいですか？"}, class:"btn btn-danger pull-right btn-lg" %>
       </div>
     </div>
   </div>
