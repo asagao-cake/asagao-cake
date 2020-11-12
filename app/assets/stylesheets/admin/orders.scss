@@ -9,24 +9,24 @@
 }
 
 /*共通*/
-.title-area {
-  margin-top: 50px;
-}
+// .title-area {
+//   margin-top: 50px;
+// }
 
-.order-info-title{
+.order-admin-title{
+  margin-left : 200px;
   background-color: #D8D8D8;
+  padding: 1px 10px;
+  display: inline-block;
 }
 
-.container-fluid {
-  height: 100%;
-}
 
 /*注文履歴一覧*/
-.order-info-table{
-  height: 300px;
-  padding: 50px 100px 30px 100px;
-  font-size: 16px;
-}
+// .order-info-table{
+//   height: 300px;
+//   padding: 0 100px 30px 100px;
+//   font-size: 16px;
+// }
 
 /*注文履歴詳細*/
 .order-info-show {

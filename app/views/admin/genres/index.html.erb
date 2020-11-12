@@ -15,6 +15,7 @@
               </ul>
             </div>
           <% end %>
+          <div class = "genre-add">
           <%= "ジャンル" %>
           <%= form.text_field :name %>
           <!--ラジオボタン-->
@@ -23,7 +24,9 @@
           <%= form.radio_button :is_valid, :false %>
           <%= form.label :is_vaild, "無効", value: :false %>
           <%= form.submit "追加", class: "btn btn-info" %>
+          </div>
         <% end %>
+
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 class Admin::OrdersController < ApplicationController
 
+    layout 'admin'
+
     def index #注文履歴一覧
         @orders = Order.page(params[:page]).per(10)
     end
