@@ -7,7 +7,7 @@
     </div>
     <div class="col-xs-5">
       <h2>
-        <%= link_to admin_orders_path do %>
+        <%= link_to admin_orders_path(order_sort: 0) do %>
           <%= @orders.count %>
         <% end %>
         件
