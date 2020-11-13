@@ -2,26 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.edit-title-admin{
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*商品編集画面*/
+.item-edit-box {
+  padding-top: 50px;
+}
+.item-edit-title{
   margin-left :100px;
   margin-bottom :50px;
   background-color: #D8D8D8;
   padding: 1px 10px;
-  width: 10%;
+  width: 14%;
+}
+
+.item-edit-image-box {
+  padding-top: 50px;
 }
 
 #item-action-btn{
   text-align: right;
 }
 
-.item-indextable{
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px;
-  border-collapse: separate;
-  border-spacing: 0px 5px;
-}
-
+/*商品一覧画面*/
 .index-title{
   margin-left :100px;
   margin-bottom :50px;
@@ -30,34 +38,32 @@
   padding: 1px 10px;
 }
 
-.item-indextable th{
-  background-color: #C0C0C0
-}
-.item-indextable td{
-  border-bottom:solid 1px #808080;
+/*新規登録画面*/
+.item-new-box {
+  padding-top: 50px
 }
 
-.item-table{
-  border-collapse: separate;
-  border-spacing: 10px 20px;
+.item-new-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 18%;
+  padding: 1px 9px;
 }
 
 .image-position{
   padding-top :70px;
 }
 
+/*商品詳細画面*/
+.item-show-box {
+  padding-top: 50px;
+}
+
 .show-title{
   margin-left :100px;
   margin-bottom :50px;
   background-color: #D8D8D8;
-  width: 10%;
-  padding: 1px 10px;
-}
-
-.new-title{
-  margin-left :100px;
-  margin-bottom :50px;
-  background-color: #D8D8D8;
   width: 14%;
-  padding: 1px 9px;
+  padding: 1px 10px;
 }

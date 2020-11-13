@@ -9,8 +9,8 @@
     </div>
   <% end %>
 <div class="container">
-  <div class="row">
-    <h3 class="new-title">商品新規登録</h3>
+  <div class="row item-new-box">
+    <h3 class="item-new-title">　商品新規登録</h3>
     <div class="col-lg-4 image-position">
       <%= f.attachment_field :image %>
     </div>
@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price %>円</td><br>
+          <td><%= f.text_field :price %> 円</td><br>
         </tr>
         <tr>
           <td><%= f.label :販売ステータス %>

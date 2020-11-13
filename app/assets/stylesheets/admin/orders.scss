@@ -2,10 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*reset css*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/*注文履歴一覧*/
+.order-title {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .order-admin-title{
@@ -15,6 +22,7 @@
   display: inline-block;
 }
 
+/*注文履歴詳細画面*/
 .order-info-title{
   margin-left : 200px;
   background-color: #D8D8D8;
@@ -33,18 +41,17 @@
   font-size: 20px;
 }
 
-.order-info-show {
-  height: 300px;
-  padding: 100px 100px 30px 100px;
-  font-size: 16px;
+.order-info-show-price-table {
+  padding: 0 200px;
 }
-
 .productionstatus {
   height: 300px;
   padding-top: 100px;
   font-size: 16px;
 }
 
-.order-info-show-price-table {
-  padding: 0 200px;
+.order-info-show {
+  height: 300px;
+  padding: 100px 100px 30px 100px;
+  font-size: 16px;
 }

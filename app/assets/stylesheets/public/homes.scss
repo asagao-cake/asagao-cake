@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*トップページ*/
 .top-page {
   height: 700px;
 }
+
 .row-box {
   margin-top: 50px;
   height: 700px;
@@ -15,12 +23,14 @@
 }
 
 .main-visual {
-  width: 40%;
+  width: 60%;
   height: 300px;
   background-image: image-url('top.png');
+  opacity: 0.5;
   background-size: cover;
-  background-position: center;
-  margin: auto;
+  background-position: right;
+  position: relative;
+  margin-left: 25%;
 }
 
 .main-visual-content {
@@ -30,17 +40,19 @@
 }
 
 .main-visual-text {
-  color: #fff; /* 文字色を白に変更 */
-  font-size: 16px;
+  position: relative;
+  color: #000;
+  font-size: 19px;
   font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
-.name {
-  font-size: 16px;
+.item-name {
+  padding-top: 13px;
+  font-size: 17px;
 }
 
-.price {
-  font-size: 16px;
+.item-price {
+  font-size: 17px;
 }
 
 /*Aboutページ*/
@@ -53,7 +65,12 @@
   margin-top: 50px;
 }
 
+.about-title {
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
 .text-about {
+  font-size: 17px;
   font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
@@ -65,7 +82,6 @@
 
 .info-title {
   font-size: 20px;
-  // font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
 .shop-info-table {

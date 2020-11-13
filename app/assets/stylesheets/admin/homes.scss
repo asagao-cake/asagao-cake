@@ -2,34 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*reset css*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*管理者ログイン画面*/
-.title-area {
-  margin-top: 50px;
-}
-
-.order-info-title{
-  background-color: #D8D8D8;
-  width: 17%;
-  padding: 3px;
+/*管理者トップ画面*/
+.admin-top-box {
+  padding-top: 50px;
 }
 
 .top-title{
   background-color: #D8D8D8;
   padding: 4px;
-  width: 12%;
-}
-
-.row-sm-12 {
-  margin-top: 50px;
-}
-
-.actions {
-  text-align: center;
-  margin-top: 100px;
+  width: 16%;
 }

@@ -1,6 +1,6 @@
 
 <div class="container-fluid top-page">
-  <div class="row-box">
+  <div class="row row-box">
     <!--ジャンル検索・サイドバー-->
     <div class="genre-search col-sm-3">
       <%= render 'public/items/genre_search', genres: @genres %>
@@ -25,8 +25,8 @@
           <%= link_to item_path(item) do %>
             <span class="item-image"><%= attachment_image_tag item, :image, :fill, 200, 200, format: 'jpeg', alt: '商品画像' %></span>
           <% end %>
-          <p class="name"><%= link_to item.name, item_path(item) %></p>
-          <p class="price">￥<%= item.price %></p>
+          <p class="item-name"><%= link_to item.name, item_path(item) %></p>
+          <p class="item-price">￥<%= item.price.to_s(:delimited) %></p>
         </div>
       <% end %>
       <p id="item-index-link"><%= link_to " もっと見る> ", items_path %></p>

@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*ジャンル登録画面*/
+.genre-index-box {
+  padding-top: 50px;
+}
+
 .genre-title-index{
   background-color: #D8D8D8;
   margin-left :65px;
@@ -14,4 +26,9 @@
   margin-left :85px;
   margin-bottom :50px;
   padding: 1px 10px;
+}
+
+/*ジャンル編集画面*/
+.genre-edit-box {
+  padding-top: 50px;
 }

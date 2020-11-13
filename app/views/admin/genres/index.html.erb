@@ -1,7 +1,7 @@
 <div class= "container">
   <div class="row">
-    <div class="col-sm-5">
-      <h3><span class="genre-title-index">ジャンル一覧・追加</span></h3>
+    <div class="col-sm-5 genre-index-box">
+      <h3><span class="genre-title-index">　ジャンル一覧・追加　</span></h3>
       <br></br>
       <div class="add_genre">
       <!--ジャンル登録-->
@@ -19,11 +19,11 @@
           <%= "ジャンル" %>
           <%= form.text_field :name %>
           <!--ラジオボタン-->
-          <%= form.radio_button :is_valid, :true, checked: true %>
+          　　<%= form.radio_button :is_valid, :true, checked: true %>
           <%= form.label :is_vaild, "有効", value: :true %>
           <%= form.radio_button :is_valid, :false %>
           <%= form.label :is_vaild, "無効", value: :false %>
-          <%= form.submit "追加", class: "btn btn-info" %>
+          　　<%= form.submit " 追加 ", class: "btn btn-info" %>
           </div>
         <% end %>
 

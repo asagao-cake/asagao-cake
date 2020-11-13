@@ -1,51 +1,28 @@
 // Place all the styles related to the admin::customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*会員一覧画面*/
+.customer-index {
+  padding-top: 50px;
+}
+
 .customer-index-title{
+  width: 15%;
+  padding: 1px 10px;
   margin-left :100px;
   margin-bottom :50px;
   background-color: #D8D8D8;
-  width: 10%;
-  padding: 1px 10px;
 }
 
-.customer-indextable{
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px;
-  border-collapse: separate;
-  border-spacing: 0px 5px;
-}
-
-// .customer-indextable th{
-//   background-color: #C0C0C0
-// }
-// .customer-indextable td{
-//   border-bottom:solid 1px #808080;
-// }
-
-.customer-table{
-  border-collapse: separate;
-  border-spacing: 10px 20px;
-}
-
-// .customer-title-area{
-//   texr-align :center;
-// }
-
-.customershow-title-area{
-  margin-top: 50px;
-  text-align: left;
-
-}
-.customer-show-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  display: inline-block;
-  margin-bottom: 50px;
-  tect-align :center;
-}
-
+/*会員詳細画面*/
 .show-title-admin{
   margin-left :160px;
   margin-bottom :50px;
@@ -53,4 +30,23 @@
   background-color: #D8D8D8;
   display: inline-block;
   padding: 1px 10px;
+}
+
+.customer-table{
+  border-collapse: separate;
+  border-spacing: 10px 20px;
+}
+
+/*会員編集画面*/
+.customer-title-area {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.customer-edit-title {
+  background-color: #D8D8D8;
+}
+
+.customer-edit-button-position {
+  padding-bottom: 100px;
 }

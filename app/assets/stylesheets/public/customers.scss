@@ -2,47 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.title-area {
-  margin-top: 50px;
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+/*マイページ画面*/
+.title-area {
+  padding-left: 200px;
+  padding-bottom: 70px;
+  padding-top: 50px;
+}
+
+.mypage-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 21%;
+}
+
+.registration-info {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/*登録情報編集画面*/
+.title-area-edit {
+  padding-top: 10px;
+  padding-left: 420px;
+  padding-bottom: 50px;
+}
+
+.mypage-edit-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 27%;
+}
+
+.customer-info-button {
+  margin-bottom: 6em;
+}
+
+/*退会画面*/
+.top-message {
+  padding-top: 200px;
+}
+
+.quit-text {
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+/*新規登録画面*/
 .sign-up-title{
   margin-bottom: 50px;
   margin-top: 80px;
 }
+
 .signup{
   background-color: #D8D8D8;
   width: 17%;
   padding: 3px;
 }
 
-.login-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 38%;
-}
-.mypage-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 21%;
-}
-.signup{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 13%;
-}
-// .title-area{
-//   margin-left: 200px;
-//   padding-top: 0px;
-// }
 
-.customer-info-button {
-  margin-bottom: 6em;
-}
-
-.signup-title {
+.signin-title {
   background-color: #D8D8D8;
-  width: 30%;
+  width: 25%;
   padding: 3px;
 }
 
@@ -51,40 +78,53 @@
   margin-top: 50px;
   padding-left: 200px;
 }
-
-.signin-title {
+.login-title{
   background-color: #D8D8D8;
-  width: 25%;
+  padding: 4px;
+  width: 38%;
+}
+
+.signup-title {
+  background-color: #D8D8D8;
+  width: 30%;
   padding: 3px;
 }
 
-/*マイページ*/
-.title-area {
-  padding-top: 10px;
-  padding-left: 100px;
-  padding-bottom: 70px;
-}
 
-.registration-info {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
+
+
+
+
+
 
 /*ログイン後のパスワード変更画面*/
 .title-area-password {
   width: 50%;
   padding-top: 50px;
-  padding-left: 300px;
-  // padding-bottom: 10px;
-}
-.mypage-edit-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 27%;
+  padding-left: 200px;
+  padding-bottom: 100px;
 }
 
-.title-area-edit {
-  padding-top: 10px;
-  padding-left: 420px;
-  padding-bottom: 50px;
+.change-label {
+  font-size: 19px;
 }
+
+input[type="email"] {
+        width: 200px;
+        height: 30px;
+}
+
+input[type="text"] {
+        width: 200px;
+        height: 30px;
+}
+
+input[type="password"] {
+        width: 200px;
+        height: 30px;
+}
+
+.change-button {
+  padding-top: 50px;
+}
+

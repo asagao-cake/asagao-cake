@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-  	<h3 class="customer-index-title">会員一覧</h3>
+  <div class="row customer-index">
+  	<h3 class="customer-index-title">　会員一覧　</h3>
   <div class="col-md-8 col-md-offset-2">
 
 <table class="table table-hover table-inverse">
@@ -20,7 +20,7 @@
 			<td>
 				<%= link_to admin_customer_path(customer.id) do %>
 					<%= customer.last_name %>
-					<%= customer.first_name %>
+					<%= customer.first_name %> 様
 				<% end %>
 			</td>
 			<td><%= customer.email %></td>

@@ -9,9 +9,9 @@
     </div>
   <% end %>
 <div class="container">
-  <div class="row">
-    <h3 class="edit-title-admin">商品編集</h3>
-    <div class="col-lg-4">
+  <div class="row item-edit-box">
+    <h3 class="item-edit-title">　商品編集</h3>
+    <div class="col-lg-4 item-edit-image-box">
       <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
       <%= f.attachment_field :image %>
     </div>
@@ -31,7 +31,7 @@
         </tr>
         <tr>
           <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price %>円</td><br>
+          <td><%= f.text_field :price %> 円</td><br>
         </tr>
         <tr>
           <td><%= f.label :販売ステータス %>

@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*reset css*/
 * {
   margin: 0;
   padding: 0;
@@ -89,7 +90,7 @@
     border:2px solid #990000;
     padding:12px; font-weight:850;
     width: 400px;
-  }
+}
 
 .alert ul {
   list-style: none;
@@ -101,9 +102,6 @@
   margin-bottom: 15px;
 }
 
-// html,body{
-//   height:100%;
-// }
 .admin-login-title{
   background-color: #D8D8D8;
   padding: 1px 10px;
