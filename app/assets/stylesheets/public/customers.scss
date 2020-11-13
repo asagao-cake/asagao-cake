@@ -6,6 +6,10 @@
   margin-top: 50px;
 }
 
+.sign-up-title{
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
 .signup{
   background-color: #D8D8D8;
   width: 17%;
@@ -21,17 +25,16 @@
   background-color: #D8D8D8;
   padding: 4px;
   width: 21%;
-  margin-bottom: 50px;
 }
 .signup{
   background-color: #D8D8D8;
   padding: 4px;
   width: 13%;
 }
-.title-area{
-  margin-left: 200px;
-  padding-top: 0px;
-}
+// .title-area{
+//   margin-left: 200px;
+//   padding-top: 0px;
+// }
 
 .customer-info-button {
   margin-bottom: 6em;
@@ -57,8 +60,8 @@
 
 /*マイページ*/
 .title-area {
-  padding-top: 50px;
-  padding-left: 200px;
+  padding-top: 10px;
+  padding-left: 100px;
   padding-bottom: 70px;
 }
 
@@ -73,4 +76,15 @@
   padding-top: 50px;
   padding-left: 300px;
   // padding-bottom: 10px;
+}
+.mypage-edit-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 27%;
+}
+
+.title-area-edit {
+  padding-top: 10px;
+  padding-left: 420px;
+  padding-bottom: 50px;
 }
