@@ -24,7 +24,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to action: :cart
     else
       @item = Item.find(params[:item_id])
-      @genres = Genre.all
+      @genres = Genre.where(is_valid: true)
       render "public/items/show"
     end
   end

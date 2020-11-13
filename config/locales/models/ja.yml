@@ -23,6 +23,7 @@ ja:
         address: 住所
         password: パスワード
         password_confirmation: パスワード（確認用）
+        current_password: 現在使用しているパスワード
       item:
         image: 写真
         name: 商品名

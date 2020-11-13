@@ -51,9 +51,9 @@
           <% @order_items.each do |order_item| %>
             <tr>
               <td><%= order_item.item.name %></td>
-              <td><%= order_item.price_including_tax %></td>
-              <td><%= order_item.item_count %></td>
-              <td><%= (order_item.price_including_tax * order_item.item_count).to_s(:delimited) %></td>
+              <td><%= order_item.price_including_tax %>円</td>
+              <td><%= order_item.item_count %>個</td>
+              <td><%= (order_item.price_including_tax * order_item.item_count).to_s(:delimited) %>円</td>
 
               <!--制作ステータス-->
               <%= form_with model: order_item, url: admin_order_detail_path(order_item.id), method: :patch,local:true do |f| %>
@@ -72,15 +72,15 @@
       <table class="table table-noborder">
         <tr>
           <th class="success">商品合計</th>
-          <td><%= @total_fee %></td>
+          <td><%= @total_fee %>円</td>
         </tr>
         <tr>
           <th class="success">送料</th>
-          <td><%= @order.shipping_fee %></td>
+          <td><%= @order.shipping_fee %>円</td>
         </tr>
         <tr>
           <th class="success">請求金額合計</th>
-          <td><%= @order.billing_amount.to_s(:delimited) %></td>
+          <td><%= @order.billing_amount.to_s(:delimited) %>円</td>
         </tr>
       </table>
     </div>

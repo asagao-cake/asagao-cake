@@ -11,7 +11,7 @@
 	    <% end %>
 
 			<div id = destroyall_button>
-			<%= link_to " カートを空にする ", cart_items_destroy_all_path, method: :delete, class: "btn btn-danger" %>
+			<%= link_to " カートを空にする ", cart_items_destroy_all_path, method: :delete,data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
 			</div>
 			<div>
 			<table class="table table-bordered">
@@ -41,7 +41,7 @@
 								<% end %>
 						</td>
 						<td><%= ((((cart_item.item.price * 1.1).round(2)).ceil) * (cart_item.item_count)).to_s(:delimited) %>円</td>
-						<td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete, class: "btn btn-danger" %></td>
+						<td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete,data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger" %></td>
 					</tr>
 					<% end %>
 				</tbody>
