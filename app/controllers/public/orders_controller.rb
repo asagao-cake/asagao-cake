@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
 
     def new #注文情報入力画面
         @customer = current_customer

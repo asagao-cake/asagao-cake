@@ -1,4 +1,7 @@
 class Public::CartItemsController < ApplicationController
+  before_action :authenticate_customer!
+  layout 'admin'
+
   def cart
     @customer = current_customer
     @cart_items = CartItem.where(customer_id: current_customer.id)
