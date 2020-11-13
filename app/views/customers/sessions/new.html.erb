@@ -3,9 +3,7 @@
     <div class="col-md-10">
     <h4 class="login-title">　会員の方はこちらからログイン　</h4></br>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <% flash.each do |key, value| %>
-            <%= content_tag(:div, value, class: "#{key}") %>
-          <% end %>
+
         <form class="form-horizontal">
           <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label"><%= f.label :メールアドレス %></label>
