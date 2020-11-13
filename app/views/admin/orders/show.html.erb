@@ -10,7 +10,10 @@
     <table class="table">
         <tr>
           <th class="">購入者</th>
-          <td><%= @order.name %></td>
+          <td><%= link_to admin_customer_path(@order.customer.id) do %>
+      					<%= @order.customer.last_name %>
+      					<%= @order.customer.first_name %>
+              <% end %> 様</td>
         </tr>
         <tr>
           <th>配送先</th>
