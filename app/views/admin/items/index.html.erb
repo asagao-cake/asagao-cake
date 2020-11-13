@@ -18,7 +18,7 @@
 					<tr>
 						<td><%= item.id %></td>
 						<td><%= link_to item.name, admin_item_path(item.id) %></td>
-						<td><%= item.price.to_s(:delimited) %></td>
+						<td><%= item.price.to_s(:delimited) %>円</td>
 						<td><%= Genre.find(item.genre_id).name%></td>
 						<td>
 			        <% if item.is_sale == true %>
