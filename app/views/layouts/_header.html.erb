@@ -15,7 +15,7 @@
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if customer_signed_in? %>
-            <li class="button greeting">ようこそ　<%= @customer.last_name %> <%= @customer.first_name %>さん！　</li>
+            <li class="button greeting">ようこそ　<%= current_customer.last_name %> <%= current_customer.first_name %>さん！　</li>
             <li class="button"><%= link_to " マイページ ", customers_my_page_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " 商品一覧 ", items_path, class:"btn btn-default btn-lg" %></li>
             <li class="button"><%= link_to " カート ", cart_items_path, class:"btn btn-default btn-lg" %></li>
