@@ -25,7 +25,7 @@
         <tr>
           <th>注文ステータス</th>
             <td>
-              <%= f.select :status, Order.statuses.keys, :selected=>Order.statuses[@order.status] %>
+              <%= f.select :status, Order.statuses.keys %>
               <%= f.submit :更新, class: "btn btn-md btn-primary" %>
             </td>
           <% end %>
