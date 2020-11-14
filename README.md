@@ -58,8 +58,8 @@
 ## 🍰使用したgem
 
 * devise
-* kaminari 1.2.1'
-* bootstrap-sass 3.3.6'
+* kaminari (1.2.1)
+* bootstrap-sass (3.3.6)
 * jquery-rails
 * refile
 * refile-mini_magick
