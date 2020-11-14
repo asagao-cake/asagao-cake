@@ -1,6 +1,7 @@
 <div class= "container">
-  <div class="row">
-  	<h3 class="index-title">商品一覧</h3>
+  <div class="row index-title-box">
+  	
+  	<h3 class="index-title">　商品一覧</h3>
     <div class="col-sm-12">
 			<table class='table table-hover table-inverse'>
 				<thead>
@@ -33,8 +34,9 @@
 			</table>
 			<div class="pagenation center-block"><%= paginate @items %></div>
 			<div id = "item-action-btn">
-			  <%= link_to "新規商品登録へ", new_admin_item_path, class: "btn btn-default btn-lg btn-info " %>
+			  <%= link_to " 新規商品登録へ ", new_admin_item_path, class: "btn btn-default btn-lg btn-info " %>
 			</div>
     </div>
+    
   </div>
 </div>

@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*一覧*/
 .address-title{
   background-color: #D8D8D8;
   padding: 4px;
@@ -9,6 +16,7 @@
   width: 16%;
 }
 
+/*編集*/
 .edit-title{
   background-color: #D8D8D8;
   padding: 4px;
