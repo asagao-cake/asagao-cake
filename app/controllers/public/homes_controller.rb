@@ -2,8 +2,8 @@ class Public::HomesController < ApplicationController
   def top
     @customer = current_customer
     # オススメ商品
-    @genres = Genre.where(is_valid: true)
-    @recommended_items = Item.where(is_sale: true).where(genre_id: @genres).sample(4)
+    @recommended_items = Item.find(OrderItem.joins(:item).group('item_id').order('count(item_id) desc').limit(4).pluck(:item_id))
+
     #ジャンル検索
     @genres = Genre.where(is_valid: true)
     if @genre = Genre.find_by(name: params[:name])
