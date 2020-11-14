@@ -70,3 +70,5 @@ gem "refile-mini_magick"
 gem 'rails-i18n'
 
 gem 'pry-byebug'
+
+gem 'jp_prefecture'
