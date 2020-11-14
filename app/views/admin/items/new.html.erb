@@ -1,5 +1,5 @@
 <%= form_with model:@item, url: admin_items_path, method: :post, local:true do |f| %>
-  
+
   <% if @item.errors.any? %>
     <div class="alert alert-position">
       <ul>
@@ -9,15 +9,37 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="container">
     <div class="row new-item-box">
-      
+
       <h3 class="new-title">　商品新規登録</h3>
       <div class="col-lg-4 image-position">
-        <%= f.attachment_field :image %>
+        <% if @item.image.present? %>
+          <%= image_tag :image, id: :img_prev %>
+        <% else %>
+          <%= image_tag "noimage.jpg", id: :img_prev, size: "300x300" %>
+        <% end %>
+        <%= f.attachment_field :image, id: :item_img %>
+        <script type="text/javascript">
+          $(function() {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+            $('#img_prev').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#item_img").change(function(){
+                readURL(this);
+            });
+          });
+        </script>
+
       </div>
-      
+
       <div class="col-lg-6">
         <table class="table table-hover table-inverse">
           <tr>
@@ -46,6 +68,6 @@
         </div>
         <% end %>
       </div>
-      
+
     </div>
   </div>
