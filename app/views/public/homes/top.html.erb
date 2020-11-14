@@ -23,13 +23,16 @@
       <% @recommended_items.each do |item| %>
         <div class="item-index">
           <%= link_to item_path(item) do %>
-            <span class="item-image"><%= attachment_image_tag item, :image, :fill, 200, 200, format: 'jpeg', alt: '商品画像' %></span>
+            <span class="item-image"><%= attachment_image_tag item, :image, :fill, 230, 180, format: 'jpeg', alt: '商品画像' %></span>
           <% end %>
           <p class="name"><%= link_to item.name, item_path(item) %></p>
           <p class="price">￥<%= item.price %></p>
         </div>
       <% end %>
+      <div>
+        </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
       <p id="item-index-link"><%= link_to " もっと見る> ", items_path %></p>
+      </div>
     </div>
   </div>
 </div>
