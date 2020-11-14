@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  validates :image, presence: {message: 'を選択してください'}
+  validates :image, presence: {message: 'を選択してください。'}
   validates :name, presence: true
   validates :description, presence: true
 
