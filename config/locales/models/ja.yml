@@ -21,7 +21,7 @@ ja:
         encrypted_password: パスワード
         postcode: 郵便番号
         address: 住所
-        password: パスワード
+        password: パスワード（確認用）
         password_confirmation: パスワード（確認用）
         current_password: 現在使用しているパスワード
       item:

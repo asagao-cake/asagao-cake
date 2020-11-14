@@ -6,18 +6,28 @@ class Customer < ApplicationRecord
   validates :last_name_kana, presence: true,
                              format: {
                                with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/,
-                               message: "を全角カタカナのみで入力して下さい"
+                               message: "を全角カタカナのみで入力して下さい。"
                              }
   validates :first_name_kana, presence: true,
                                format: {
                                with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/,
-                               message: "を全角カタカナのみで入力して下さい"
+                               message: "を全角カタカナのみで入力して下さい。"
                              }
-  validates :phone_number, presence: true
+
   validates :email, presence: true
-  validates :encrypted_password, presence: true
-  validates :postcode, presence: true
+
+  validates :postcode, presence: true,
+                       format: {
+                         with: /\A\d{7}\z/,
+                         message: "を7桁の数値で入力して下さい。"
+                       }
   validates :address, presence: true
+  validates :phone_number, presence: true,
+                           format: {
+                             with:   /\A\d{10,11}\z/,
+                             message: "を10桁もしくは11桁の数値で入力して下さい。"
+                           }
+  validates :encrypted_password, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

@@ -47,7 +47,7 @@
           </div>
           <br></br><br></br>
           <div class="form-group">
-            <label for="inputPhonenumber3" class="col-sm-2 control-label"><%= f.label :電話番号 %></label>
+            <label for="inputPhonenumber3" class="col-sm-2 control-label"><%= f.label :"電話番号(ハイフンなし)" %></label>
               <div class="col-sm-5">
                 　<%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control", id:"inputPhonenumber3" %>
               </div>
@@ -81,6 +81,7 @@
         <%- if devise_mapping.registerable? && controller_name != 'sessions' %>
           <p>　<%= link_to "こちら", new_customer_session_path %>からログインてください</p>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
