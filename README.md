@@ -65,6 +65,7 @@
 * refile-mini_magick
 * rails-i18n
 * pry-byebug
+* jp_prefecture
 
 ## 🍰作者 「 朝顔組 」
 
