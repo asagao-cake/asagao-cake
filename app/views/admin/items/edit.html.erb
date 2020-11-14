@@ -8,40 +8,43 @@
       </ul>
     </div>
   <% end %>
-<div class="container">
-  <div class="row">
-    <h3 class="edit-title-admin">商品編集</h3>
-    <div class="col-lg-4">
-      <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
-      <%= f.attachment_field :image %>
+
+  <div class="container">
+    <div class="row edit-title-admin-box">
+
+      <h3 class="edit-title-admin">　商品編集</h3>
+      <div class="col-lg-4">
+        <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
+        <%= f.attachment_field :image %>
+      </div>
+      <div class="col-lg-6">
+        <table class="table table-hover table-inverse">
+          <tr>
+            <td><%= f.label :商品名 %></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :商品説明 %></td>
+            <td><%= f.text_field :description %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :ジャンル %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td><br>
+          </tr>
+          <tr>
+            <td><%= f.label :税抜価格 %></td>
+            <td><%= f.text_field :price %> 円</td><br>
+          </tr>
+          <tr>
+            <td><%= f.label :販売ステータス %>
+            <td><%= f.select :is_sale, [["販売中", "1"],["販売停止中", "0"]] %></td><br>
+          </tr>
+        </table>
+      <div id = "item-action-btn">
+        <%= f.submit :変更を保存, class: "btn btn-default btn-lg btn-info " %>
+      </div>
+      <% end %>
     </div>
-    <div class="col-lg-6">
-      <table class="table table-hover table-inverse">
-        <tr>
-          <td><%= f.label :商品名 %></td>
-          <td><%= f.text_field :name %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :商品説明 %></td>
-          <td><%= f.text_field :description %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :ジャンル %></td>
-          <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td><br>
-        </tr>
-        <tr>
-          <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price %>円</td><br>
-        </tr>
-        <tr>
-          <td><%= f.label :販売ステータス %>
-          <td><%= f.select :is_sale, [["販売中", "1"],["販売停止中", "0"]] %></td><br>
-        </tr>
-      </table>
-    <div id = "item-action-btn">
-      <%= f.submit :変更を保存, class: "btn btn-default btn-lg btn-info " %>
-    </div>
-    <% end %>
+
     </div>
   </div>
-</div>

@@ -21,6 +21,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /*ヘッダー*/
 .navbar-default {
   height: 130px;
@@ -88,7 +89,7 @@
     border:2px solid #990000;
     padding:12px; font-weight:850;
     width: 400px;
-  }
+}
 
 .alert ul {
   list-style: none;
@@ -100,9 +101,6 @@
   margin-bottom: 15px;
 }
 
-// html,body{
-//   height:100%;
-// }
 .admin-login-title{
   background-color: #D8D8D8;
   padding: 1px 10px;
@@ -112,14 +110,14 @@
 
 .fix-wrapper{
   min-height: 100vh;
-  position: relative;/* 相対位置 */
+  position: relative;
   box-sizing: border-box;
   height: 1500px;
   background-color: #FAFAFA;
 }
 
 footer {
-  position: absolute;/* 絶対位置 */
+  position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #E2D8C9;
@@ -128,4 +126,11 @@ footer {
   text-align: center;
   line-height: 130px;
   font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+.button-admin {
+  padding-right: 30px;
+  position: absolute;
+  top: 10px;
+  text-decoration: none;
 }

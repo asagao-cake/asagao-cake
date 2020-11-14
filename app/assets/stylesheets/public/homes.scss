@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*トップページ*/
 .top-page {
   height: 700px;
@@ -15,12 +21,14 @@
 }
 
 .main-visual {
-  width: 40%;
+  width: 60%;
   height: 300px;
   background-image: image-url('top.png');
   background-size: cover;
   background-position: center;
-  margin: auto;
+  position: relative;
+  margin-left: 25%;
+
 }
 
 .main-visual-content {
@@ -30,8 +38,8 @@
 }
 
 .main-visual-text {
-  color: #fff; /* 文字色を白に変更 */
-  font-size: 16px;
+  color: #fff;
+  font-size: 18px;
   font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
@@ -44,6 +52,11 @@
 }
 
 /*Aboutページ*/
+.text-about-title {
+  font-size: 50px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
 .about-page {
   width: 100%;
   height: 1020px;
@@ -65,23 +78,10 @@
 
 .info-title {
   font-size: 20px;
-  // font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
 
 .shop-info-table {
   width: 50%;
   margin: 0 auto;
-}
-
-
-th {
-  font-size: 17px;
-  text-align: center;
-}
-
-
-
-/*ログイン画面*/
-.row-login {
-  margin-top: 50px;
 }

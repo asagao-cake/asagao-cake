@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+
     <% if @customer.errors.any? %>
       <div class="alert alert-position">
         <ul>
@@ -9,9 +10,10 @@
         </ul>
       </div>
     <% end %>
+
     <div class="col-md-10 col-md-offset-3">
       <div class="customer-title-area">
-        <h3 class="customer-edit-title"><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h3>
+        <h3 class="customer-edit-title">　<%= @customer.last_name %> <%= @customer.first_name %>さんの会員情報編集　</h3>
       </div>
       <%= form_with url: admin_customer_path(@customer.id), model:@customer,　id: 'new_user', class: 'new_user', local: true do |f| %>
         <form class="form-horizontal">
@@ -82,11 +84,12 @@
           <br></br><br></br>
           <div class="form-group">
             <div class="col-md-offset-2 col-md-7 customer-edit-button-position">
-              <%= f.submit "変更を保存する", class:"btn btn-primary" %>
+              <%= f.submit "　変更を保存する　", class:"btn btn-primary btn-lg" %>
             </div>
           </div>
         </form>
-      </div>
       <% end %>
+    </div>
+
   </div>
 </div>

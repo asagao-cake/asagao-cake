@@ -2,10 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .title-area {
   margin-top: 50px;
 }
 
+
+/*マイページ*/
+.title-area-mypage {
+  padding-top: 50px;
+  padding-left: 200px;
+  padding-bottom: 70px;
+}
+
+.registration-info {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.mypage-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 21%;
+}
+
+/*新規登録*/
 .sign-up-title{
   margin-bottom: 50px;
   margin-top: 80px;
@@ -21,20 +47,12 @@
   padding: 4px;
   width: 38%;
 }
-.mypage-title{
-  background-color: #D8D8D8;
-  padding: 4px;
-  width: 21%;
-}
+
 .signup{
   background-color: #D8D8D8;
   padding: 4px;
   width: 13%;
 }
-// .title-area{
-//   margin-left: 200px;
-//   padding-top: 0px;
-// }
 
 .customer-info-button {
   margin-bottom: 6em;
@@ -58,33 +76,28 @@
   padding: 3px;
 }
 
-/*マイページ*/
-.title-area {
+/*編集*/
+.title-area-edit {
   padding-top: 10px;
-  padding-left: 100px;
-  padding-bottom: 70px;
+  padding-left: 420px;
+  padding-bottom: 50px;
 }
 
-.registration-info {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-/*ログイン後のパスワード変更画面*/
-.title-area-password {
-  width: 50%;
-  padding-top: 50px;
-  padding-left: 300px;
-  // padding-bottom: 10px;
-}
 .mypage-edit-title{
   background-color: #D8D8D8;
   padding: 4px;
   width: 27%;
 }
 
-.title-area-edit {
-  padding-top: 10px;
-  padding-left: 420px;
-  padding-bottom: 50px;
+/*退会*/
+.quit-message{
+  padding-top: 100px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+/*ログイン後のパスワード変更*/
+.title-area-password {
+  width: 50%;
+  padding-top: 50px;
+  padding-left: 300px;
 }
