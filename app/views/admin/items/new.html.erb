@@ -14,13 +14,13 @@
     <div class="row new-item-box">
 
       <h3 class="new-title">　商品新規登録</h3>
-      <div class="col-lg-4 image-position">
+      <div class="col-lg-5 image-position">
         <% if @item.image.present? %>
-          <%= image_tag :image, id: :img_prev %>
+          <%= image_tag :image, id: :img_prev, size: "450x300" %>
         <% else %>
-          <%= image_tag "noimage.jpg", id: :img_prev, size: "300x300" %>
+          <%= image_tag "no_image_yoko.jpg", id: :img_prev, size: "450x300" %>
         <% end %>
-        <%= f.attachment_field :image, id: :item_img %>
+        <%= f.attachment_field :image, id: :item_img, size: "450x300" %>
         <script type="text/javascript">
           $(function() {
             function readURL(input) {

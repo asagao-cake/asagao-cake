@@ -13,9 +13,31 @@
     <div class="row edit-title-admin-box">
 
       <h3 class="edit-title-admin">　商品編集</h3>
-      <div class="col-lg-4">
-        <%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
-        <%= f.attachment_field :image %>
+      <div class="col-lg-5">
+        <% if @item.image.present? %>
+          <%= attachment_image_tag @item, :image, id: :img_prev, size: "450x300" %>
+        <% else %>
+          <%= image_tag @item, :image, :fill, 450, 300, format: 'jpeg', id: :img_prev %>
+        <% end %>
+        <%= f.attachment_field :image, id: :item_img %>
+        
+         <script type="text/javascript">
+          $(function() {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+            $('#img_prev').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#item_img").change(function(){
+                readURL(this);
+            });
+          });
+        </script>
+        
       </div>
       <div class="col-lg-6">
         <table class="table table-hover table-inverse">
