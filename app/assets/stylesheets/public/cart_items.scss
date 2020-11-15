@@ -1,0 +1,57 @@
+// Place all the styles related to the public::cart_items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title-area {
+  padding-top: 50px;
+}
+
+.cart-info-table {
+  padding: 0 200px 30px 200px;
+}
+
+#destroyall_button{
+  text-align :right;
+  margin-bottom : 10px;
+}
+
+.total-fee td{
+  padding: 5px 15px;
+}
+
+.order_button{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.cart-info-table-bottom {
+  height: 300px;
+  padding: 0 200px;
+}
+
+.button-box {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-box > :first-child {
+  margin-right: auto;
+}
+
+.order-button {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.title-area-cart {
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,103 @@
+// Place all the styles related to the public::customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title-area {
+  margin-top: 50px;
+}
+
+
+/*マイページ*/
+.title-area-mypage {
+  padding-top: 50px;
+  padding-left: 200px;
+  padding-bottom: 70px;
+}
+
+.registration-info {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.mypage-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 21%;
+}
+
+/*新規登録*/
+.sign-up-title{
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+.signup{
+  background-color: #D8D8D8;
+  width: 17%;
+  padding: 3px;
+}
+
+.login-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 38%;
+}
+
+.signup{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 13%;
+}
+
+.customer-info-button {
+  margin-bottom: 6em;
+}
+
+.signup-title {
+  background-color: #D8D8D8;
+  width: 30%;
+  padding: 3px;
+}
+
+/*ログイン画面*/
+.row-login {
+  margin-top: 50px;
+  padding-left: 200px;
+}
+
+.signin-title {
+  background-color: #D8D8D8;
+  width: 25%;
+  padding: 3px;
+}
+
+/*編集*/
+.title-area-edit {
+  padding-top: 10px;
+  padding-left: 420px;
+  padding-bottom: 50px;
+}
+
+.mypage-edit-title{
+  background-color: #D8D8D8;
+  padding: 4px;
+  width: 27%;
+}
+
+/*退会*/
+.quit-message{
+  padding-top: 100px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+/*ログイン後のパスワード変更*/
+.title-area-password {
+  width: 50%;
+  padding-top: 50px;
+  padding-left: 300px;
+}

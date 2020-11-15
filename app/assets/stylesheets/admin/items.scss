@@ -1,0 +1,70 @@
+// Place all the styles related to the admin::items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*編集*/
+.edit-title-admin-box {
+  padding-top: 50px;
+}
+
+.edit-title-admin{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  padding: 1px 10px;
+  width: 14%;
+}
+
+#item-action-btn{
+  text-align: right;
+}
+
+/*一覧*/
+.index-title-box {
+  padding-top: 50px;
+}
+
+.index-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 14%;
+  padding: 1px 10px;
+}
+
+/*新規登録*/
+.new-item-box {
+  padding-top: 50px;
+}
+
+.image-position{
+  padding-top :50px;
+  margin-right: 10px;
+}
+
+.new-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 18%;
+  padding: 1px 9px;
+}
+
+/*詳細*/
+.show-item-box {
+  padding-top: 50px;
+}
+
+.show-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 14%;
+  padding: 1px 10px;
+}

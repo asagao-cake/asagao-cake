@@ -1,0 +1,37 @@
+<div class="title-area">
+  <h3><span class="admin-login-title">　管理者ログイン　</span></h3>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-7 col-md-offset-3">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-3 control-label"><%= f.label :メールアドレス %></label>
+          <div class="col-sm-7">
+             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail3" %>
+          </div>
+        </div>
+        <br></br>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label"><%= f.label :パスワード %></label>
+          <div class="col-sm-7">
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id:"inputPassword3" %>
+          </div>
+        </div>
+        <br></br><br></br>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-8">
+            <%= f.submit "ログイン", class:"btn btn-primary btn-lg" %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<% end %>
+

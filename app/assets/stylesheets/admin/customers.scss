@@ -1,0 +1,51 @@
+// Place all the styles related to the admin::customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*会員一覧*/
+.custmer-index-box {
+  padding-top: 50px;
+}
+
+.customer-index-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  background-color: #D8D8D8;
+  width: 14%;
+  padding: 1px 10px;
+}
+
+/*会員詳細*/
+.show-title-admin{
+  margin-left :160px;
+  margin-bottom :50px;
+  margin-top: 50px;
+  background-color: #D8D8D8;
+  display: inline-block;
+  padding: 1px 10px;
+}
+
+.customer-table{
+  border-collapse: separate;
+  border-spacing: 10px 20px;
+}
+
+/*会員編集*/
+.customer-edit-title{
+  margin-left :100px;
+  margin-bottom :50px;
+  margin-top: 50px;
+  background-color: #D8D8D8;
+  display: inline-block;
+  padding: 1px 10px;
+}
+
+.customer-edit-button-position {
+  padding-bottom: 50px;
+}

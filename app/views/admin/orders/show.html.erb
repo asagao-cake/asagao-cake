@@ -1,0 +1,92 @@
+<h3 class="order-info-show-title"><span class="order-info-title">　注文履歴詳細　</span></h3>
+<div class="container-fluid">
+
+  <div class="row-sm-12 order-info-show-table">
+  <!--注文者情報テーブル-->
+  <%= form_with model:@order, url: admin_order_path, method: :patch,local:true do |f| %>
+    <table class="table">
+        <tr>
+          <th class="">購入者</th>
+          <td><%= link_to admin_customer_path(@order.customer.id) do %>
+      					<%= @order.customer.last_name %>
+      					<%= @order.customer.first_name %>
+              <% end %> 様</td>
+        </tr>
+        <tr>
+          <th>配送先</th>
+          <td>〒<%= @order.postcode %> <%= @order.address %><br>
+              <%= @order.name %> 様
+              </td>
+        </tr>
+        <tr>
+          <th>支払方法</th>
+          <td><%= @order.payment_method %></td>
+        </tr>
+        <tr>
+          <th>注文ステータス</th>
+            <td>
+              <%= f.select :status, Order.statuses.keys %>
+              <%= f.submit :更新, class: "btn btn-md btn-primary" %>
+            </td>
+          <% end %>
+
+        </tr>
+      </table>
+  </div>
+
+  <div class="row-sm-12 order-info-show-price-table">
+    <div class="col-sm-9 productionstatus">
+      <table class= "table table-noborder table-hover table-inverse">
+        <thead>
+          <tr class="active">
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @order_items.each do |order_item| %>
+            <tr>
+              <td><%= order_item.item.name %></td>
+              <td><%= order_item.price_including_tax %>円</td>
+              <td><%= order_item.item_count %>個</td>
+              <td><%= (order_item.price_including_tax * order_item.item_count).to_s(:delimited) %>円</td>
+
+              <!--制作ステータス-->
+              <%= form_with model: order_item, url: admin_order_detail_path(order_item.id), method: :patch,local:true do |f| %>
+
+                <td><%= f.select :production_status, ["着手不可","製作待ち","製作中","製作完了"] %></td>
+                <td><%= f.submit :更新, class: "btn btn-md btn-primary" %></td>
+              <% end %>
+            <% end %>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-3 order-info-show">
+    <!--金額情報テーブル-->
+      <table class="table table-noborder">
+        <tr>
+          <th class="success">商品合計</th>
+          <td><%= @total_fee %>円</td>
+        </tr>
+        <tr>
+          <th class="success">送料</th>
+          <td><%= @order.shipping_fee %>円</td>
+        </tr>
+        <tr>
+          <th class="success">請求金額合計</th>
+          <td><%= @order.billing_amount.to_s(:delimited) %>円</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  </div>
+
+</div>

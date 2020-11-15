@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row admin-top-box">
+    
+    <h3 class="text-center top-title"> 管理者画面</h3>
+    <br></br><br></br>
+    <div class="col-xs-7">
+      <h2>本日の注文件数</h2>
+    </div>
+    <div class="col-xs-5">
+      <h2>
+        <%= link_to admin_orders_path(order_sort: 0) do %>
+          <%= @orders.count %>
+        <% end %>
+        件
+      </h2>
+    </div>
+    
+  </div>
+</div>

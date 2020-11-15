@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row-xs-12 row-box">
+
+    <!--ジャンル検索・サイドバー-->
+    <div class="genre-search col-xs-3">
+      <%= render 'public/items/genre_search', genres: @genres %>
+    </div>
+
+    <!--商品一覧・タイトル-->
+    <div class="col-xs-9">
+      <% if @genre %>
+        <h1><%= @genre.name %>一覧　（全<%= @items.count %>件）</h1>
+      <% else %>
+        <h1>商品一覧　（全<%= @items.count %>件）</h1>
+      <% end %>
+
+      <!--商品一覧・表示-->
+      <div class="item-box">
+        <%= render 'public/items/item_index', items: @items %>
+      </div>
+
+      <!--ページネーション-->
+      <div class="pagenation"><%= paginate @pages %></div>
+    </div>
+
+  </div>
+</div>

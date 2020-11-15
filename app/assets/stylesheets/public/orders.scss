@@ -1,0 +1,91 @@
+// Place all the styles related to the public/orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*共通*/
+.title-order-area {
+  margin-top: 50px;
+}
+
+.order-info-title{
+  background-color: #D8D8D8;
+  width: 17%;
+  padding: 3px;
+  margin-top: 40px;
+}
+
+.container-fluid {
+  height: 700px;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+.info-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*注文情報入力画面*/
+.order-info-form {
+  padding: 50px 100px 30px 100px;
+}
+
+/*注文情報確認画面*/
+.order-info-table{
+  height: 300px;
+  padding: 30px 50px 30px 0px;
+  font-size: 16px;
+}
+
+.item-info-table {
+  height: 300px;
+}
+
+.order-info-text {
+  padding: 0 100px;
+  font-size: 20px;
+}
+
+/*注文完了画面*/
+.complete-text {
+  font-size: 23px;
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Hannotate SC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+.thanks {
+  width: 520px;
+  height: 520px;
+  background-image: image-url('thankscake.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+/*注文履歴一覧画面*/
+.order-history-index {
+  padding: 0 100px 10px 100px;
+}
+
+/*注文履歴詳細画面*/
+.order-history-show {
+  height: 700px;
+  padding-top: 20px;
+  padding-left: 200px;
+  font-size: 16px;
+}
+
+.title-area-order {
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+}
